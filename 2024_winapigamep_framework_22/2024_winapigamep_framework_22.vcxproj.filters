@@ -142,6 +142,9 @@
     <ClInclude Include="TestGround.h">
       <Filter>Engine\03. Object</Filter>
     </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>Engine\03. Object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2024_winapigamep_framework_22.rc">
@@ -230,6 +233,9 @@
       <Filter>Engine\06. Component</Filter>
     </ClCompile>
     <ClCompile Include="TestGround.cpp">
+      <Filter>Engine\03. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
       <Filter>Engine\03. Object</Filter>
     </ClCompile>
   </ItemGroup>
