@@ -1,5 +1,6 @@
 #pragma once
 #include "Object.h"
+#include "RigidBody.h"
 class Texture;
 class Player : public Object
 {
@@ -14,6 +15,7 @@ public:
 	void StayCollision(Collider* _other) override;
 	void ExitCollision(Collider* _other) override;
 private:
+	RigidBody* rigid;
 	Texture* m_pTex;
 };
 

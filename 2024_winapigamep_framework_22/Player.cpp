@@ -24,7 +24,8 @@ Player::Player()
 	AddComponent<RigidBody>();
 	AddComponent<Animator>();
 
-	GetComponent<RigidBody>()->UseGravity(true);
+	rigid = GetComponent<RigidBody>();	
+	rigid ->UseGravity(true);
 
 	GetComponent<Animator>()->CreateAnimation(L"JiwooFront", m_pTex, Vec2(0.f, 150.f),
 		Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.1f);
@@ -38,12 +39,12 @@ Player::~Player()
 }
 void Player::Update()
 {
-	
+
 
 	if (GET_KEY(KEY_TYPE::A))
-		GetComponent<RigidBody>()->SetVelocity(Vec2(- 100.f, 0.f ));
+		rigid->SetVelocity(Vec2(-100.f, 0.f));
 	else if (GET_KEY(KEY_TYPE::D))
-		GetComponent<RigidBody>()->SetVelocity(Vec2(100.f, 0.f));
+		rigid->SetVelocity(Vec2(100.f, 0.f));
 	/*else if (GET_KEYDOWN(KEY_TYPE::SPACE))	*/
 
 	else
@@ -79,16 +80,17 @@ void Player::Render(HDC _hdc)
 
 void Player::EnterCollision(Collider* _other)
 {
-	
+
 }
 
 void Player::StayCollision(Collider* _other)
 {
+	cout << "col ";
 	Object* pOtherObj = _other->GetOwner();
 	if (pOtherObj->GetName() == L"Ground")
 	{
-		cout << "dddd";
-		GetComponent<RigidBody>()->SetVelocity(Vec2(GetComponent<RigidBody>()->GetVelocity().x, 0.f));
+		cout << "GroundCol" << endl;
+		rigid->SetVelocity(Vec2(rigid->GetVelocity().x, 0.f));
 	}
 }
 

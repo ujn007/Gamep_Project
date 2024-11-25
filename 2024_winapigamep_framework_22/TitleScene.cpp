@@ -6,6 +6,7 @@
 #include "SceneManager.h"
 #include "Enemy.h"
 #include "Background.h"
+#include "TestGround.h"
 #include "CollisionManager.h"
 #include "ResourceManager.h"
 void TitleScene::Init()
@@ -22,9 +23,16 @@ void TitleScene::Init()
 	AddObject(pPlayer, LAYER::PLAYER);
 
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::ENEMY);
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER);
 	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PLAYER, LAYER::ENEMY);
 	GET_SINGLE(ResourceManager)->LoadSound(L"BGM", L"Sound\\Retro_bgm.wav", true);
 	GET_SINGLE(ResourceManager)->Play(L"BGM");
+
+	TestGround* pGround = new TestGround;
+	pGround->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT - 200.f});
+	pGround->SetSize({ 1000.f, 200.f });
+	pGround->SetName(L"Ground");
+	AddObject(pGround, LAYER::GROUND);
 
 	Background* pBG = new Background;
 	pBG->SetPos({ SCREEN_WIDTH  / 2.f, SCREEN_HEIGHT / 2.f });
