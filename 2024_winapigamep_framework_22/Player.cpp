@@ -10,6 +10,7 @@
 #include "Collider.h"
 #include "Animator.h"
 #include "Animation.h"
+#include "RigidBody.h"
 Player::Player()
 	: m_pTex(nullptr)
 {
@@ -20,7 +21,11 @@ Player::Player()
 	//m_pTex = GET_SINGLE(ResourceManager)->TextureLoad(L"Player", L"Texture\\planem.bmp");
 	m_pTex = GET_SINGLE(ResourceManager)->TextureLoad(L"Jiwoo", L"Texture\\jiwoo.bmp");
 	this->AddComponent<Collider>();
+	AddComponent<RigidBody>();
 	AddComponent<Animator>();
+
+	GetComponent<RigidBody>()->UseGravity(true);
+
 	GetComponent<Animator>()->CreateAnimation(L"JiwooFront", m_pTex, Vec2(0.f, 150.f),
 		Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.1f);
 	GetComponent<Animator>()->PlayAnimation(L"JiwooFront", true);
@@ -33,15 +38,16 @@ Player::~Player()
 }
 void Player::Update()
 {
-	Vec2 vPos = GetPos();
-	//if(GET_KEY(KEY_TYPE::LEFT))
+	
+
 	if (GET_KEY(KEY_TYPE::A))
-		vPos.x -= 100.f * fDT;
-	if (GET_KEY(KEY_TYPE::D))
-		vPos.x += 100.f * fDT;
-	if (GET_KEYDOWN(KEY_TYPE::SPACE))
-		CreateProjectile();
-	SetPos(vPos);
+		GetComponent<RigidBody>()->SetVelocity(Vec2(- 100.f, 0.f ));
+	else if (GET_KEY(KEY_TYPE::D))
+		GetComponent<RigidBody>()->SetVelocity(Vec2(100.f, 0.f));
+	/*else if (GET_KEYDOWN(KEY_TYPE::SPACE))	*/
+
+	else
+		GetComponent<RigidBody>()->SetVelocity(Vec2(0.f, 0.f));
 }
 
 void Player::Render(HDC _hdc)
@@ -71,23 +77,21 @@ void Player::Render(HDC _hdc)
 	//::PlgBlt();
 }
 
-void Player::CreateProjectile()
+void Player::EnterCollision(Collider* _other)
 {
-	Projectile* pProj = new Projectile;
-	Vec2 vPos = GetPos();
-	vPos.y -= GetSize().y / 2.f;
-	pProj->SetPos(vPos);
-	pProj->SetSize({30.f,30.f});
-	// 도 -> 라디안: PI / 180
-	//pProj->SetAngle(PI / 4 * 7.f); // 1
-	//static float angle = 0.f;
-	//pProj->SetAngle(angle * PI / 180); // 2
-	//angle += 10.f;
-	pProj->SetDir({0.f, -1.f});
-	pProj->SetName(L"PlayerBullet");
-	//Vec2 a = { 10.f, 10.f };
-	//Vec2 b = { 0.f, 0.f };
-	//Vec2 c = a / b;
+	
+}
 
-	GET_SINGLE(SceneManager)->GetCurrentScene()->AddObject(pProj, LAYER::PROJECTILE);
+void Player::StayCollision(Collider* _other)
+{
+	Object* pOtherObj = _other->GetOwner();
+	if (pOtherObj->GetName() == L"Ground")
+	{
+		cout << "dddd";
+		GetComponent<RigidBody>()->SetVelocity(Vec2(GetComponent<RigidBody>()->GetVelocity().x, 0.f));
+	}
+}
+
+void Player::ExitCollision(Collider* _other)
+{
 }

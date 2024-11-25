@@ -7,6 +7,8 @@
 #include "Enemy.h"
 #include "CollisionManager.h"
 #include "ResourceManager.h"
+#include "TestGround.h"
+
 void TitleScene::Init()
 {
 	Object* pObj = new Enemy;
@@ -19,7 +21,15 @@ void TitleScene::Init()
 	pPlayer->SetPos({ SCREEN_WIDTH / 2.f,500.f });
 	pPlayer->SetSize({ 100.f,100.f });
 	AddObject(pPlayer, LAYER::PLAYER);
+
+	Object* pGround = new TestGround;
+	pGround->SetPos({ SCREEN_WIDTH / 2.f,SCREEN_HEIGHT - 100.f });
+	pObj->SetName(L"Ground");
+	pGround->SetSize({ 1280.f ,100.f });
+	AddObject(pGround, LAYER::Ground);
+
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::ENEMY);
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::Ground, LAYER::PLAYER);
 	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PLAYER, LAYER::ENEMY);
 	GET_SINGLE(ResourceManager)->LoadSound(L"BGM", L"Sound\\Retro_bgm.wav", true);
 	GET_SINGLE(ResourceManager)->Play(L"BGM");

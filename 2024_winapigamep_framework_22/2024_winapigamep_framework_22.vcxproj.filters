@@ -35,6 +35,15 @@
     <Filter Include="Engine\07. Module">
       <UniqueIdentifier>{ec499769-3097-4d06-8abb-b25ff4a1a933}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\06. Component\Animator">
+      <UniqueIdentifier>{e0bf2bef-8bae-4474-ba1d-31b6de8bdf5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06. Component\Collider">
+      <UniqueIdentifier>{c7b5413e-ea11-4da9-a055-e564a587d973}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06. Component\RigidBody">
+      <UniqueIdentifier>{a8b2d107-8397-47cc-9cf4-9abdaeff79bb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="2024_winapigamep_framework_22.h">
@@ -106,12 +115,6 @@
     <ClInclude Include="ResourceManager.h">
       <Filter>Engine\02. Manager</Filter>
     </ClInclude>
-    <ClInclude Include="Component.h">
-      <Filter>Engine\06. Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Collider.h">
-      <Filter>Engine\06. Component</Filter>
-    </ClInclude>
     <ClInclude Include="GDISelector.h">
       <Filter>Engine\07. Module</Filter>
     </ClInclude>
@@ -121,11 +124,23 @@
     <ClInclude Include="EventManager.h">
       <Filter>Engine\02. Manager</Filter>
     </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Engine\06. Component\Animator</Filter>
+    </ClInclude>
     <ClInclude Include="Animator.h">
+      <Filter>Engine\06. Component\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Engine\06. Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="RigidBody.h">
+      <Filter>Engine\06. Component\RigidBody</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
       <Filter>Engine\06. Component</Filter>
     </ClInclude>
-    <ClInclude Include="Animation.h">
-      <Filter>Engine\06. Component</Filter>
+    <ClInclude Include="TestGround.h">
+      <Filter>Engine\03. Object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -190,12 +205,6 @@
     <ClCompile Include="ResourceManager.cpp">
       <Filter>Engine\02. Manager</Filter>
     </ClCompile>
-    <ClCompile Include="Component.cpp">
-      <Filter>Engine\06. Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Collider.cpp">
-      <Filter>Engine\06. Component</Filter>
-    </ClCompile>
     <ClCompile Include="GDISelector.cpp">
       <Filter>Engine\07. Module</Filter>
     </ClCompile>
@@ -205,11 +214,23 @@
     <ClCompile Include="EventManager.cpp">
       <Filter>Engine\02. Manager</Filter>
     </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Engine\06. Component\Animator</Filter>
+    </ClCompile>
     <ClCompile Include="Animator.cpp">
+      <Filter>Engine\06. Component\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Engine\06. Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidBody.cpp">
+      <Filter>Engine\06. Component\RigidBody</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
       <Filter>Engine\06. Component</Filter>
     </ClCompile>
-    <ClCompile Include="Animation.cpp">
-      <Filter>Engine\06. Component</Filter>
+    <ClCompile Include="TestGround.cpp">
+      <Filter>Engine\03. Object</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

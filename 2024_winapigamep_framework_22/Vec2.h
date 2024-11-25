@@ -9,6 +9,10 @@ public:
 	Vec2(int _x, int _y) : x((float)_x), y((float)_y) {}
 	Vec2(const Vec2& _other) : x(_other.x), y(_other.y) {}
 public:
+	Vec2 operator - ()
+	{
+		return Vec2(-x, -y);
+	}
 	Vec2 operator + (const Vec2& _vOther)
 	{
 		return Vec2(x + _vOther.x, y + _vOther.y);
@@ -40,6 +44,11 @@ public:
 		x -= _other.x;
 		y -= _other.y;
 	}
+	void operator*=(float _f)
+	{
+		x *= _f;
+		y *= _f;
+	}
 	float LengthSquared()
 	{
 		return x * x + y * y;
@@ -48,14 +57,15 @@ public:
 	{
 		return ::sqrt(LengthSquared());
 	}
-	void Normalize()
+	Vec2& Normalize()
 	{
 		float len = Length();
 		// 0¿Ã∏È æ»µ≈.
-		if (len < FLT_EPSILON)
-			return;
+		assert(len > FLT_EPSILON);
+
 		x /= len;
 		y /= len;
+		return *this;
 	}
 	float Dot(Vec2 _other)
 	{
