@@ -32,9 +32,9 @@ void TitleScene::Init()
 	/*Object* pBG = new Background;
 	pBG->SetPos({ SCREEN_WIDTH  / 2.f, SCREEN_HEIGHT / 2.f });
 	pBG->SetSize({Ratio, Ratio });
-	AddObject(pBG, LAYER::BACKGROUND);
+	AddObject(pBG, LAYER::BACKGROUND);*/
 
-	vector<Vec2> spinePos;
+	/*vector<Vec2> spinePos;
 	spinePos.push_back({ 400.f, SCREEN_HEIGHT / 2.f });
 	spinePos.push_back({ 500.f, SCREEN_HEIGHT / 2.f });
 	spinePos.push_back({ 600.f, SCREEN_HEIGHT / 2.f });
