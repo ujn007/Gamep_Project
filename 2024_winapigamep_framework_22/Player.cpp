@@ -2,7 +2,6 @@
 #include "Player.h"
 #include "TimeManager.h"
 #include "InputManager.h"
-#include "Projectile.h"
 #include "SceneManager.h"
 #include "Scene.h"
 #include "Texture.h"
@@ -42,7 +41,6 @@ Player::~Player()
 }
 void Player::Update()
 {
-	cout << GetPos().x << endl;
 	if (GET_KEY(KEY_TYPE::A) && 0 + 10< GetPos().x)
 		rigid->SetVelocity(Vec2(-250.f, rigid->GetVelocity().y));
 	else if (GET_KEY(KEY_TYPE::D) && SCREEN_WIDTH - 10 > GetPos().x)
@@ -97,7 +95,9 @@ void Player::EnterCollision(Collider* _other)
 	if (obj->GetName() == L"Ground") {
 		isGround = true;
 		rigid->UseGravity(false);
-		float groundPos = obj->GetPos().y - (obj->GetSize().y / 2);		
+		float dis = abs(obj->GetSize().y - player->GetSize().y);
+		cout << obj->GetPos().y - dis;
+		float groundPos = obj->GetPos().y - dis / 1.2f;
 		player->SetPos(Vec2(player->GetPos().x, groundPos));		
 	}
 }

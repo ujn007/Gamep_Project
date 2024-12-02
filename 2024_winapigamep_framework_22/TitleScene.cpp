@@ -7,31 +7,29 @@
 #include "TimeManager.h"
 #include "Enemy.h"
 #include "Spine.h"
+#include "TestGround.h"
 #include "Background.h"
 #include "CollisionManager.h"
 #include "ResourceManager.h"
 #include "DotweenManager.h"
+#include "Collider.h"
 
 void TitleScene::Init()
-{
-	Object* pObj = new Enemy;
-	pObj->SetPos({ SCREEN_WIDTH / 2.f,150.f });
-	pObj->SetSize({ 100.f,100.f });
-	pObj->SetName(L"Enemy");
-	AddObject(pObj, LAYER::ENEMY);
-
+{ 
 	Object* pPlayer = new Player;
-	pPlayer->SetPos({ 500.f,0.f });
+	pPlayer->SetPos({ SCREEN_WIDTH / 2.f,100.f });
 	pPlayer->SetSize({ 100.f,100.f });
+	pPlayer->SetName(L"Player");
 	AddObject(pPlayer, LAYER::PLAYER);
 
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::ENEMY);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::BACKGROUND, LAYER::PLAYER);
-	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::PLAYER);
-	GET_SINGLE(ResourceManager)->LoadSound(L"BGM", L"Sound\\Retro_bgm.wav", true);
-	GET_SINGLE(ResourceManager)->Play(L"BGM");
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER);
+	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::PLAYER);
+	//GET_SINGLE(ResourceManager)->LoadSound(L"BGM", L"Sound\\Retro_bgm.wav", true);
+	//GET_SINGLE(ResourceManager)->Play(L"BGM");
 
-	Object* pBG = new Background;
+	/*Object* pBG = new Background;
 	pBG->SetPos({ SCREEN_WIDTH  / 2.f, SCREEN_HEIGHT / 2.f });
 	pBG->SetSize({Ratio, Ratio });
 	AddObject(pBG, LAYER::BACKGROUND);
@@ -52,7 +50,14 @@ void TitleScene::Init()
 
 
 		AddObject(spines[i], LAYER::PROJECTILE);
-	}
+	}*/
+
+	Object* pGround = new TestGround;
+	pGround->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT -50.f});	
+	pGround->SetSize({ SCREEN_WIDTH * 1.f ,50.f });	
+	pGround->GetComponent<Collider>()->SetSize({ SCREEN_WIDTH * 1.f, 50.f });
+	pGround->SetName(L"Ground");
+	AddObject(pGround, LAYER::GROUND);
 }
 
 void TitleScene::Update()

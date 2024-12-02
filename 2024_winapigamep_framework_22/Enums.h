@@ -8,7 +8,7 @@ enum class LAYER
 	PROJECTILE,
 	GROUND,
 	Wall,
-	// UI
+	UI,
 	END = 30
 };
 
