@@ -174,6 +174,7 @@ void Player::EnterCollision(Collider* _other)
 	Object* player = rigid->GetOwner();
 
 	if (obj->GetName() == L"Ground") {
+		cout << "degfh erwiugthweiugtwe" << endl;
 		isGround = true;
 		rigid->UseGravity(false);
 		float dis = abs(obj->GetSize().y - player->GetSize().y);
