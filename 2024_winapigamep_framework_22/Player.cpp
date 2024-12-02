@@ -43,9 +43,9 @@ Player::~Player()
 void Player::Update()
 {
 	cout << GetPos().x << endl;
-	if (GET_KEY(KEY_TYPE::A) && 0< GetPos().x)
+	if (GET_KEY(KEY_TYPE::A) && 0 + 10< GetPos().x)
 		rigid->SetVelocity(Vec2(-250.f, rigid->GetVelocity().y));
-	else if (GET_KEY(KEY_TYPE::D) && SCREEN_WIDTH - 202 > GetPos().x)
+	else if (GET_KEY(KEY_TYPE::D) && SCREEN_WIDTH - 10 > GetPos().x)
 		rigid->SetVelocity(Vec2(250.f, rigid->GetVelocity().y));
 	else
 		rigid->SetVelocity(Vec2(0.f, rigid->GetVelocity().y));
@@ -53,7 +53,7 @@ void Player::Update()
 	if (GET_KEYDOWN(KEY_TYPE::SPACE) && isGround) {
 		isGround = false;
 		rigid->UseGravity(true);
-		rigid->SetVelocity(Vec2(rigid->GetVelocity().x, -500.f));
+		rigid->SetVelocity(Vec2(rigid->GetVelocity().x, -400.f));
 	}
 
 	if (GET_KEYDOWN(KEY_TYPE::F)) {
