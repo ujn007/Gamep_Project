@@ -78,7 +78,7 @@ void BaseWindow::createWindow()
     m_hWnd = CreateWindowW(
         L"2-2 Gamep", // 윈도우 클래스 식별자
         L"준용의 윈도우",   // 제목
-        WS_OVERLAPPEDWINDOW, // 윈도우 어떤 스타일로 만들것인가   
+        WS_POPUP, // 윈도우 어떤 스타일로 만들것인가
         Winposx,  // ★ 띄울 위치의 LEFT
         Winposy,             // ★ 띄울 위치의 TOP
         SCREEN_WIDTH,             // ★ 해상도X
@@ -92,7 +92,7 @@ void BaseWindow::createWindow()
     RECT rt = { Winposx , Winposy,
                  Winposx + SCREEN_WIDTH,
                  Winposy + SCREEN_HEIGHT };
-    AdjustWindowRect(&rt, WS_OVERLAPPEDWINDOW, false);
+    AdjustWindowRect(&rt, WS_POPUP, false);
     MoveWindow(m_hWnd, Winposx, Winposy,
         rt.right - rt.left, rt.bottom - rt.top, false);
 }
@@ -100,7 +100,7 @@ void BaseWindow::createWindow()
 void BaseWindow::showWindow(int _CmdShow)
 {
     // global namespace
-    ::ShowWindow(m_hWnd, _CmdShow);
+    ::ShowWindow(m_hWnd, SW_MAXIMIZE | SW_HIDE);
 }
 
 void BaseWindow::updateWindow()

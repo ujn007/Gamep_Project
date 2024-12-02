@@ -4,32 +4,55 @@
 #include "Player.h"
 #include "InputManager.h"
 #include "SceneManager.h"
+#include "TimeManager.h"
 #include "Enemy.h"
+#include "Spine.h"
 #include "Background.h"
-#include "TestGround.h"
 #include "CollisionManager.h"
 #include "ResourceManager.h"
-#include "Collider.h"
+#include "DotweenManager.h"
+
 void TitleScene::Init()
 {
+	Object* pObj = new Enemy;
+	pObj->SetPos({ SCREEN_WIDTH / 2.f,150.f });
+	pObj->SetSize({ 100.f,100.f });
+	pObj->SetName(L"Enemy");
+	AddObject(pObj, LAYER::ENEMY);
+
 	Object* pPlayer = new Player;
-	pPlayer->SetPos({ SCREEN_WIDTH / 2.f,500.f });
+	pPlayer->SetPos({ 500.f,0.f });
 	pPlayer->SetSize({ 100.f,100.f });
-	pPlayer->SetName(L"Player");
 	AddObject(pPlayer, LAYER::PLAYER);
 
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::ENEMY);
-	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER);
-	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PLAYER, LAYER::ENEMY);
-	//GET_SINGLE(ResourceManager)->LoadSound(L"BGM", L"Sound\\Retro_bgm.wav", true);
-	//GET_SINGLE(ResourceManager)->Play(L"BGM");
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::BACKGROUND, LAYER::PLAYER);
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::PLAYER);
+	GET_SINGLE(ResourceManager)->LoadSound(L"BGM", L"Sound\\Retro_bgm.wav", true);
+	GET_SINGLE(ResourceManager)->Play(L"BGM");
 
-	TestGround* pGround = new TestGround;
-	pGround->SetPos(Vec2(SCREEN_WIDTH / 2.f, SCREEN_HEIGHT  -100.f));
-	pGround->SetSize(Vec2(SCREEN_WIDTH * 1.f, 80.f));
-	pGround->GetComponent<Collider>()->SetSize(Vec2(SCREEN_WIDTH * 1.f, 50.f));	
-	pGround->SetName(L"Ground");
-	AddObject(pGround, LAYER::GROUND);
+	Object* pBG = new Background;
+	pBG->SetPos({ SCREEN_WIDTH  / 2.f, SCREEN_HEIGHT / 2.f });
+	pBG->SetSize({Ratio, Ratio });
+	AddObject(pBG, LAYER::BACKGROUND);
+
+	vector<Vec2> spinePos;
+	spinePos.push_back({ 400.f, SCREEN_HEIGHT / 2.f });
+	spinePos.push_back({ 500.f, SCREEN_HEIGHT / 2.f });
+	spinePos.push_back({ 600.f, SCREEN_HEIGHT / 2.f });
+	spinePos.push_back({ 600.f, SCREEN_HEIGHT / 2.f });
+
+	GET_SINGLE(TimeManager)->GetDT();
+
+	vector<Object*> spines;
+	for (int i = 0; i < spinePos.size(); i++) {
+		spines.push_back(new Spine);
+		spines[i]->SetPos(spinePos[i]);
+		spines[i]->SetSize({Ratio,Ratio});
+
+
+		AddObject(spines[i], LAYER::PROJECTILE);
+	}
 }
 
 void TitleScene::Update()

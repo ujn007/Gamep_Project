@@ -1,0 +1,64 @@
+#include "pch.h"
+#include "Spine.h"
+#include "TimeManager.h"
+#include "Texture.h"
+#include "ResourceManager.h"
+#include "Collider.h"
+#include "EventManager.h"
+#include "DotweenManager.h"
+
+Spine::Spine()
+//	: m_dir(-1.f)
+	: m_angle(0.f)
+	, m_vDir(1.f, 1.f)
+{
+	//m_pTex = new Texture;
+	//wstring path = GET_SINGLE(ResourceManager)->GetResPath();
+	//path += L"Texture\\Bullet.bmp";
+	//m_pTex->Load(path);
+	m_pTex = GET_SINGLE(ResourceManager)->TextureLoad(L"Spine", L"Texture\\Spine.bmp");
+	this->AddComponent<Collider>();
+	GetComponent<Collider>()->SetSize({ 32.f, 65.f });
+}
+
+Spine::~Spine()
+{
+}
+
+void Spine::Update()
+{
+	
+}
+
+void Spine::Render(HDC _hdc)
+{
+	Vec2 vPos = GetPos();
+	Vec2 vSize = GetSize();
+	//ELLIPSE_RENDER(_hdc, vPos.x, vPos.y
+	//	, vSize.x, vSize.y);
+	int width = m_pTex->GetWidth();
+	int height = m_pTex->GetHeight();
+	::TransparentBlt(_hdc
+		, (int)(vPos.x - width * vSize.x / 2)
+		, (int)(vPos.y - height * vSize.y / 2)
+		, width * vSize.x, height * vSize.y,
+		m_pTex->GetTexDC()
+		, 0, 0, width, height, RGB(255, 255, 255));
+	ComponentRender(_hdc);
+}
+
+void Spine::EnterCollision(Collider* _other)
+{
+	Vec2 offset;
+	offset = { 0.f, 60.f };
+	Vec2 pos = GetPos();
+	GET_SINGLE(DotweenManager)->DoMove(this, pos, pos + offset, 1.0f);
+}
+
+void Spine::StayCollision(Collider* _other)
+{
+}
+
+void Spine::ExitCollision(Collider* _other)
+{
+}
