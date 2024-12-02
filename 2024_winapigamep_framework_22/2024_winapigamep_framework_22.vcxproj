@@ -148,7 +148,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(SolutionDir)Output\build\Resource\Fmod\inc</AdditionalIncludeDirectories>
@@ -173,6 +173,7 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="Door.h" />
     <ClInclude Include="DotweenManager.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Enums.h" />
@@ -186,6 +187,7 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Quit.h" />
     <ClInclude Include="Spine.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceBase.h" />
@@ -198,8 +200,9 @@
     <ClInclude Include="TestGround.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TimeManager.h" />
-    <ClInclude Include="TitleScene.h" />
+    <ClInclude Include="Stage1.h" />
     <ClInclude Include="Vec2.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
@@ -210,6 +213,7 @@
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Core.cpp" />
+    <ClCompile Include="Door.cpp" />
     <ClCompile Include="DotweenManager.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EventManager.cpp" />
@@ -221,6 +225,7 @@
     <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Quit.cpp" />
     <ClCompile Include="Spine.cpp" />
     <ClCompile Include="ResourceBase.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
@@ -231,7 +236,8 @@
     <ClCompile Include="TestGround.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TimeManager.cpp" />
-    <ClCompile Include="TitleScene.cpp" />
+    <ClCompile Include="Stage1.cpp" />
+    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2024_winapigamep_framework_22.rc" />
@@ -239,6 +245,9 @@
   <ItemGroup>
     <Image Include="2024_winapigamep_framework_22.ico" />
     <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

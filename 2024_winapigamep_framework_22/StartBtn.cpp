@@ -2,6 +2,8 @@
 #include "StartBtn.h"
 #include "Texture.h"
 #include "ResourceManager.h"
+#include "InputManager.h"
+#include "SceneManager.h"
 
 StartBtn::StartBtn()
 	: m_pTex(nullptr)
@@ -16,6 +18,14 @@ StartBtn::~StartBtn()
 
 void StartBtn::Update()
 {
+	Vec2 pos = GetPos();
+	Vec2 size = GetRect();
+	Vec2 mousePos = GET_MOUSEPOS;
+
+	if (GET_KEYDOWN(KEY_TYPE::LBUTTON)) {
+		if (mousePos.x > pos.x - size.x && mousePos.x < pos.x + size.x && mousePos.y > pos.y - size.y && mousePos.y < pos.y + size.y)
+			GET_SINGLE(SceneManager)->LoadScene(L"Stage1");
+	}
 }
 void StartBtn::Render(HDC _hdc)
 {

@@ -15,9 +15,9 @@ public:
 	void ExitCollision(Collider* _other); // 충돌해제
 	const UINT& GetID() const { return m_ID; }
 public:
-	void SetSize(Vec2 _vSize) { m_vSize = _vSize; }
+	void SetSize(Vec2 _vSize) { m_vSize = _vSize * Ratio; }
 	const Vec2& GetSize() const { return m_vSize; }
-	void SetOffSetPos(Vec2 _vOffsetPos) { m_vOffsetPos = _vOffsetPos; }
+	void SetOffSetPos(Vec2 _vOffsetPos) { m_vOffsetPos = _vOffsetPos * Ratio; }
 	const Vec2& GetOffSetPos() const { return m_vOffsetPos; }
 	const Vec2& GetLatedUpatedPos() const
 	{

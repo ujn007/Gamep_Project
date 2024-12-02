@@ -18,7 +18,7 @@ Spine::Spine()
 	//m_pTex->Load(path);
 	m_pTex = GET_SINGLE(ResourceManager)->TextureLoad(L"Spine", L"Texture\\Spine.bmp");
 	this->AddComponent<Collider>();
-	GetComponent<Collider>()->SetSize({ 32.f, 65.f });
+	GetComponent<Collider>()->SetSize({ 1.f, 2.f });
 }
 
 Spine::~Spine()

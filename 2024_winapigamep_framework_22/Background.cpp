@@ -11,7 +11,7 @@
 Background::Background()
 	: m_pTex(nullptr)
 {
-	m_pTex = GET_SINGLE(ResourceManager)->TextureLoad(L"Map", L"Texture\\Map.bmp");
+	m_pTex = GET_SINGLE(ResourceManager)->TextureLoad(L"Map", L"Texture\\Stage2.bmp");
 	this->AddComponent<Collider>();
 	GetComponent<Collider>()->SetSize({ 2000.f,200.f });
 	GetComponent<Collider>()->SetOffSetPos({ 0.f, 300.f });
@@ -35,12 +35,13 @@ void Background::Render(HDC _hdc)
 	int width = m_pTex->GetWidth();
 	int height = m_pTex->GetHeight();
 
-	::TransparentBlt(_hdc
-		, (int)(vPos.x - width * vSize.x / 2)
-		, (int)(vPos.y - height * vSize.y / 2)
-		, width * vSize.x, height * vSize.y,
+	::StretchBlt(_hdc 
+		, 0
+		, 0
+		, SCREEN_WIDTH, SCREEN_HEIGHT ,
 		m_pTex->GetTexDC()
-		, 0, 0,width, height, RGB(255,0,255));
+		, 0
+		, 0, SCREEN_WIDTH / Ratio, SCREEN_HEIGHT / Ratio, SRCCOPY);
 	ComponentRender(_hdc);
 	//::StretchBlt();
 	//::AlphaBlend();
