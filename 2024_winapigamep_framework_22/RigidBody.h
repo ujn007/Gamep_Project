@@ -12,6 +12,7 @@ private:
     float m_fMaxSpeed;
     float m_fFricCoeff;
 
+    float m_gravity;
     bool useGravity;
 
 public:
@@ -27,8 +28,10 @@ public:
     Vec2 GetVelocity() { return m_vVelocity; }  
 
     void SetVelocity(Vec2 _v) { m_vVelocity = _v; } 
+    void AddVelocity(Vec2 _v) { m_vVelocity += _v; } 
     void SetMaxVelocity(float _Speed) { m_fMaxSpeed = _Speed; }
 
+    void Gravity();
 private:
     void Move();
 

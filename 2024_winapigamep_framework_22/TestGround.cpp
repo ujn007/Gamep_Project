@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "TestGround.h"
 #include "Collider.h"
+#include "Rigidbody.h"
 
 TestGround::TestGround()
 {
@@ -26,16 +27,24 @@ void TestGround::Render(HDC _hdc)
 
 void TestGround::EnterCollision(Collider* _other)
 {
-	Object::EnterCollision(_other);
-	cout << "dd";
+	
+}
+
+void TestGround::SetCollider(Object* owner, Vec2 scale, Vec2 offset)
+{
+	/*m_pOwner = owner;
+
+	Collider* col = GetCollider();
+	col->SetSize(scale);
+	col->SetOffSetPos(offset);*/
 }
 
 void TestGround::StayCollision(Collider* _other)
 {
-	Object::StayCollision(_other);
+  
 }
 
 void TestGround::ExitCollision(Collider* _other)
 {
-	Object::ExitCollision(_other);
+   
 }

@@ -4,7 +4,7 @@
 #include "InputManager.h"
 #include "Component.h"
 Object::Object()
-	: m_vPos{}
+	:m_vPos{}
 	, m_vSize{}
 	, m_IsDie(false)
 {

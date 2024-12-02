@@ -34,12 +34,12 @@ using std::wstring;
 
 // 각종 define
 #define PI 3.14159265f
-#define SCREEN_WIDTH  1920	
-#define SCREEN_HEIGHT 1080
+#define SCREEN_WIDTH 1280
+#define SCREEN_HEIGHT 720
 #define Ratio 32
 // 디버깅용 콘솔창
 #ifdef _DEBUG
-#ifdef UNICODE
+#ifdef UNICODE cvf
 #pragma comment(linker, "/entry:wWinMainCRTStartup /subsystem:console")
 #else
 #pragma comment(linker, "/entry:WinMainCRTStartup /subsystem:console")

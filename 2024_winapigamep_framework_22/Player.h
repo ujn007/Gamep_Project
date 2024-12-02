@@ -17,5 +17,7 @@ public:
 private:
 	RigidBody* rigid;
 	Texture* m_pTex;
+	bool isJump;
+	bool isGround;
 };
 

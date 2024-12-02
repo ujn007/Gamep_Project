@@ -49,6 +49,12 @@ public:
 		x *= _f;
 		y *= _f;
 	}
+	bool IsZero()
+	{
+		if (x == 0.f && y == 0.f)
+			return true;
+		return false;
+	}
 	float LengthSquared()
 	{
 		return x * x + y * y;

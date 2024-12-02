@@ -65,8 +65,8 @@ void Core::GameLoop()
 	//	callcount = 0;
 	//}
 	MainUpdate();
-	MainRender();
 	GET_SINGLE(EventManager)->Update();
+	MainRender();
 }
 
 
