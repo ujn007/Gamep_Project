@@ -13,6 +13,8 @@ Background::Background()
 {
 	m_pTex = GET_SINGLE(ResourceManager)->TextureLoad(L"Stage2", L"Texture\\Stage2.bmp");
 	this->AddComponent<Collider>();
+	GetComponent<Collider>()->SetSize({ 2000.f,200.f });
+	GetComponent<Collider>()->SetOffSetPos({ 0.f, 300.f });
 }
 Background::~Background()
 {

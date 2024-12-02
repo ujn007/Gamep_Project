@@ -103,7 +103,7 @@
     <ClInclude Include="Enemy.h">
       <Filter>Engine\03. Object</Filter>
     </ClInclude>
-    <ClInclude Include="Projectile.h">
+    <ClInclude Include="Spine.h">
       <Filter>Engine\03. Object</Filter>
     </ClInclude>
     <ClInclude Include="ResourceBase.h">
@@ -145,6 +145,12 @@
     <ClInclude Include="Background.h">
       <Filter>Engine\03. Object</Filter>
     </ClInclude>
+    <ClInclude Include="DotweenManager.h">
+      <Filter>Engine\02. Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="MainBG.h" />
+    <ClInclude Include="MainScene.h" />
+    <ClInclude Include="StartBtn.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2024_winapigamep_framework_22.rc">
@@ -196,7 +202,7 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>Engine\03. Object</Filter>
     </ClCompile>
-    <ClCompile Include="Projectile.cpp">
+    <ClCompile Include="Spine.cpp">
       <Filter>Engine\03. Object</Filter>
     </ClCompile>
     <ClCompile Include="ResourceBase.cpp">
@@ -238,5 +244,11 @@
     <ClCompile Include="Background.cpp">
       <Filter>Engine\03. Object</Filter>
     </ClCompile>
+    <ClCompile Include="DotweenManager.cpp">
+      <Filter>Engine\02. Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="MainBG.cpp" />
+    <ClCompile Include="MainScene.cpp" />
+    <ClCompile Include="StartBtn.cpp" />
   </ItemGroup>
 </Project>

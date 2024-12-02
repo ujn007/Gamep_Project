@@ -7,6 +7,7 @@ enum class LAYER
 	ENEMY,
 	PROJECTILE,
 	Ground,
+	UI,
 	// UI
 	END = 30
 };

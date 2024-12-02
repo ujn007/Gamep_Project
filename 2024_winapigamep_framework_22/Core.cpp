@@ -6,6 +6,8 @@
 #include "ResourceManager.h"
 #include "CollisionManager.h"
 #include "EventManager.h"
+#include "DotweenManager.h"
+
 bool Core::Init(HWND _hwnd)
 {
 	// 변수 초기화
@@ -78,6 +80,7 @@ void Core::MainUpdate()
 	GET_SINGLE(InputManager)->Update();
 	GET_SINGLE(SceneManager)->Update();
 	GET_SINGLE(CollisionManager)->Update();
+	GET_SINGLE(DotweenManager)->Update(GET_SINGLE(TimeManager)->GetDT());
 
 }
 

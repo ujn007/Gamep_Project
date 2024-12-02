@@ -2,7 +2,6 @@
 #include "Player.h"
 #include "TimeManager.h"
 #include "InputManager.h"
-#include "Projectile.h"
 #include "SceneManager.h"
 #include "Scene.h"
 #include "Texture.h"
@@ -41,9 +40,9 @@ void Player::Update()
 	
 
 	if (GET_KEY(KEY_TYPE::A))
-		GetComponent<RigidBody>()->SetVelocity(Vec2(- 100.f, 0.f ));
+		GetComponent<RigidBody>()->SetVelocity(Vec2(- 300.f, 0.f ));
 	else if (GET_KEY(KEY_TYPE::D))
-		GetComponent<RigidBody>()->SetVelocity(Vec2(100.f, 0.f));
+		GetComponent<RigidBody>()->SetVelocity(Vec2(300.f, 0.f));
 	/*else if (GET_KEYDOWN(KEY_TYPE::SPACE))	*/
 
 	else
