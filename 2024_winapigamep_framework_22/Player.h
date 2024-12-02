@@ -14,10 +14,15 @@ public:
 	void EnterCollision(Collider* _other)override;
 	void StayCollision(Collider* _other) override;
 	void ExitCollision(Collider* _other) override;
+
+	void HandleMovement();
+	void HandleAnimation();
 private:
 	RigidBody* rigid;
 	Texture* m_pTex;
+	ANIM currentAnim;
 	bool isJump;
 	bool isGround;
+	bool isFacingRight;
 };
 

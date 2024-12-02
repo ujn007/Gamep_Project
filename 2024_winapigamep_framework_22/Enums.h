@@ -9,7 +9,19 @@ enum class LAYER
 	GROUND,
 	Wall,
 	UI,
-	END = 30
+	END 
+};
+
+enum class ANIM
+{
+	IDLE_LEFT,
+	IDLE_RIGHT,
+	RUN_LEFT,
+	RUN_RIGHT,
+	JUMP_RIGHT,
+	JUMP_LEFT,
+	FALL_RIGHT,
+	FALL_LEFT
 };
 
 enum class PEN_TYPE

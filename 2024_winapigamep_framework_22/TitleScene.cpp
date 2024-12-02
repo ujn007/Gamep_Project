@@ -23,16 +23,15 @@ void TitleScene::Init()
 	AddObject(pPlayer, LAYER::PLAYER);
 
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::ENEMY);
-	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::BACKGROUND, LAYER::PLAYER);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER);
 	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::PLAYER);
 	//GET_SINGLE(ResourceManager)->LoadSound(L"BGM", L"Sound\\Retro_bgm.wav", true);
 	//GET_SINGLE(ResourceManager)->Play(L"BGM");
 
-	/*Object* pBG = new Background;
+	Object* pBG = new Background;
 	pBG->SetPos({ SCREEN_WIDTH  / 2.f, SCREEN_HEIGHT / 2.f });
-	pBG->SetSize({Ratio, Ratio });
-	AddObject(pBG, LAYER::BACKGROUND);*/
+	pBG->SetSize({ SCREEN_WIDTH, SCREEN_HEIGHT });
+	AddObject(pBG, LAYER::BACKGROUND);
 
 	/*vector<Vec2> spinePos;
 	spinePos.push_back({ 400.f, SCREEN_HEIGHT / 2.f });
