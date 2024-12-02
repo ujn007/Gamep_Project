@@ -25,18 +25,11 @@ void TitleScene::Init()
 	//GET_SINGLE(ResourceManager)->Play(L"BGM");
 
 	TestGround* pGround = new TestGround;
-	pGround->SetPos(Vec2(SCREEN_WIDTH / 2.f, SCREEN_HEIGHT - 200.f));
+	pGround->SetPos(Vec2(SCREEN_WIDTH / 2.f, SCREEN_HEIGHT  -100.f));
 	pGround->SetSize(Vec2(SCREEN_WIDTH * 1.f, 80.f));
 	pGround->GetComponent<Collider>()->SetSize(Vec2(SCREEN_WIDTH * 1.f, 50.f));	
 	pGround->SetName(L"Ground");
 	AddObject(pGround, LAYER::GROUND);
-
-	TestGround* pWall = new TestGround;
-	pWall->SetPos(Vec2(SCREEN_WIDTH - 300.f, SCREEN_HEIGHT /2.f));
-	pWall->SetSize(Vec2(200.f, 1080.f));
-	pWall->GetComponent<Collider>()->SetSize(Vec2(200.f, 1080.f));
-	pWall->SetName(L"Wall");
-	AddObject(pWall, LAYER::Wall);	
 }
 
 void TitleScene::Update()
