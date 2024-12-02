@@ -3,13 +3,25 @@ enum class LAYER
 {
 	DEFAULT,
 	BACKGROUND,
-	GROUND,
 	PLAYER,
 	ENEMY,
 	PROJECTILE,
+	GROUND,
 	Wall,
 	UI,
-	END
+	END 
+};
+
+enum class ANIM
+{
+	IDLE_LEFT,
+	IDLE_RIGHT,
+	RUN_LEFT,
+	RUN_RIGHT,
+	JUMP_RIGHT,
+	JUMP_LEFT,
+	FALL_RIGHT,
+	FALL_LEFT
 };
 
 enum class PEN_TYPE
