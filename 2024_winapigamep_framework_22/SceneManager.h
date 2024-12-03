@@ -16,11 +16,15 @@ public:
 	{
 		return m_pCurrentScene;
 	}
+	const wstring GetCurrentSceneName() const {
+		return m_currentSceneName;
+	}
 private:
 	// 씬들을 map으로 관리
 	map<wstring, std::shared_ptr<Scene>> m_mapScenes;
 	//Scene* m_pCurrentScene;
 	// 현재 씬
 	std::shared_ptr<Scene> m_pCurrentScene;
+	wstring m_currentSceneName;
 };
 

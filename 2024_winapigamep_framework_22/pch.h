@@ -34,9 +34,9 @@ using std::wstring;
 
 // 각종 define
 #define PI 3.14159265f
-#define SCREEN_WIDTH 1280
-#define SCREEN_HEIGHT 720
-#define Ratio 32
+#define SCREEN_WIDTH 1296
+#define SCREEN_HEIGHT 729
+#define Ratio 27
 // 디버깅용 콘솔창
 #ifdef _DEBUG
 #ifdef UNICODE cvf

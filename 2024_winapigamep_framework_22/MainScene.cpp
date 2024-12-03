@@ -4,6 +4,7 @@
 #include "InputManager.h"
 #include "SceneManager.h"
 #include "MainBG.h"
+#include "Quit.h"
 #include "Background.h"
 #include "ResourceManager.h"
 #include "StartBtn.h"
@@ -21,18 +22,14 @@ void MainScene::Init()
 	btnObj->SetSize({ 2.f, 2.f });
 	btnObj->SetName(L"Btn");
 	AddObject(btnObj, LAYER::UI);
+
+	btnObj = new Quit;
+	btnObj->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f + 100});
+	btnObj->SetSize({ 2.f, 2.f });
+	btnObj->SetName(L"Btn2");
+	AddObject(btnObj, LAYER::UI);
 }
 void MainScene::Update()
 {
 	Scene::Update();
-	StartBtn* btn = dynamic_cast<StartBtn*>(GetLayerObjects(LAYER::UI)[0]);
-
-	Vec2 pos = btn->GetPos();
-	Vec2 size = btn->GetRect();
-	Vec2 mousePos = GET_MOUSEPOS;
-	if (GET_KEYDOWN(KEY_TYPE::LBUTTON)) {
-		Vec2 mousePos = GET_MOUSEPOS;
-		if(mousePos.x > pos.x - size.x && mousePos.x < pos.x + size.x && mousePos.y > pos.y - size.y && mousePos.y < pos.y + size.y)
-			GET_SINGLE(SceneManager)->LoadScene(L"TitleScene");
-	}
 }

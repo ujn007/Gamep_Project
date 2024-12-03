@@ -88,7 +88,7 @@
     <ClInclude Include="Scene.h">
       <Filter>Engine\04. Scene</Filter>
     </ClInclude>
-    <ClInclude Include="TitleScene.h">
+    <ClInclude Include="Stage1.h">
       <Filter>Engine\04. Scene</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h">
@@ -148,11 +148,20 @@
     <ClInclude Include="DotweenManager.h">
       <Filter>Engine\02. Manager</Filter>
     </ClInclude>
-    <ClInclude Include="MainBG.h" />
+    <ClInclude Include="StartBtn.h">
+      <Filter>Engine\03. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Quit.h">
+      <Filter>Engine\03. Object</Filter>
+    </ClInclude>
     <ClInclude Include="MainScene.h">
       <Filter>Engine\04. Scene</Filter>
     </ClInclude>
-    <ClInclude Include="StartBtn.h" />
+    <ClInclude Include="MainBG.h">
+      <Filter>Engine\03. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Door.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2024_winapigamep_framework_22.rc">
@@ -189,7 +198,7 @@
     <ClCompile Include="Scene.cpp">
       <Filter>Engine\04. Scene</Filter>
     </ClCompile>
-    <ClCompile Include="TitleScene.cpp">
+    <ClCompile Include="Stage1.cpp">
       <Filter>Engine\04. Scene</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
@@ -249,10 +258,22 @@
     <ClCompile Include="DotweenManager.cpp">
       <Filter>Engine\02. Manager</Filter>
     </ClCompile>
-    <ClCompile Include="MainBG.cpp" />
+    <ClCompile Include="Quit.cpp">
+      <Filter>Engine\03. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="StartBtn.cpp">
+      <Filter>Engine\03. Object</Filter>
+    </ClCompile>
     <ClCompile Include="MainScene.cpp">
       <Filter>Engine\04. Scene</Filter>
     </ClCompile>
-    <ClCompile Include="StartBtn.cpp" />
+    <ClCompile Include="MainBG.cpp">
+      <Filter>Engine\03. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Door.cpp" />
+    <ClCompile Include="Wall.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
