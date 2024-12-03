@@ -9,6 +9,7 @@
 #include "Spine.h"
 #include "Door.h"
 #include "Wall.h"
+#include "TestGround.h"
 #include "Background.h"
 #include "CollisionManager.h"
 #include "ResourceManager.h"
@@ -18,7 +19,7 @@
 void Stage1::Init()
 { 
 	Object* pPlayer = new Player;
-	pPlayer->SetPos({ SCREEN_WIDTH / 2.f,500.f });
+	pPlayer->SetPos({ 100.f,500.f });
 	pPlayer->SetSize({ 100.f,100.f });
 	pPlayer->SetName(L"Player");
 	AddObject(pPlayer, LAYER::PLAYER);
@@ -54,15 +55,15 @@ void Stage1::Init()
 	}*/
 
 	Object* pGround = new Wall;
-	pGround->SetPos({ 0.f, 650.f});	
+	pGround->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f + 340.f });
 	pGround->SetSize({ 100.f ,5.f });	
-	
+	pGround->GetComponent<Collider>()->SetSize(pGround->GetSize());
 	pGround->SetName(L"Ground");
 	AddObject(pGround, LAYER::GROUND);
 
 
 	Object* pDoor = new Door;
-	pDoor->SetPos({ SCREEN_WIDTH / 2.f, 600.f });
+	pDoor->SetPos({ 1100.f, 600.f });
 	pDoor->SetSize({ Ratio, Ratio });
 	pDoor->SetName(L"Door");
 	AddObject(pDoor, LAYER::GROUND);

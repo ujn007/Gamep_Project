@@ -12,7 +12,7 @@ Background::Background()
 	: m_pTex(nullptr)
 {
 	m_pTex = GET_SINGLE(ResourceManager)->TextureLoad(L"Map", L"Texture\\Stage2.bmp");
-	this->AddComponent<Collider>();
+	//this->AddComponent<Collider>();
 }
 Background::~Background()
 {

@@ -174,10 +174,11 @@ void Player::EnterCollision(Collider* _other)
 	Object* player = rigid->GetOwner();
 
 	if (obj->GetName() == L"Ground") {
+		cout << "egoirheierhhir" << endl;
 		isGround = true;
 		rigid->UseGravity(false);
 		float dis = abs(obj->GetSize().y - player->GetSize().y);
-		float groundPos = obj->GetPos().y - dis / 1.2f;
+		float groundPos = obj->GetPos().y - dis / 1.15f;
 		player->SetPos(Vec2(player->GetPos().x, groundPos));
 	}
 }

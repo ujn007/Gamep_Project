@@ -11,7 +11,6 @@ Wall::Wall()
 {
 	m_pTex = GET_SINGLE(ResourceManager)->TextureLoad(L"Wall", L"Texture\\Wall.bmp");
 	this->AddComponent<Collider>();
-	GetComponent<Collider>()->SetSize({ 1000.f, 5.f });
 }
 
 Wall::~Wall()
@@ -32,12 +31,31 @@ void Wall::Render(HDC _hdc)
 	int width = m_pTex->GetWidth();
 	int height = m_pTex->GetHeight();
 	::StretchBlt(_hdc
-		, (vPos.x - width * vSize.x)
-		, (vPos.y - height * vSize.y)
+		, (vPos.x - width * vSize.x * 6.7f)
+		, (vPos.y - height * vSize.y * 6.7f)
 		, vSize.x * Ratio, vSize.y * Ratio,
 		m_pTex->GetTexDC()
 		, 0
 		, 0, 
 		width, height, SRCCOPY);
 	ComponentRender(_hdc);
+}
+void Wall::SetCollider(Object* owner, Vec2 scale, Vec2 offset)
+{
+
+}
+
+void Wall::EnterCollision(Collider* _other)
+{
+
+}
+
+void Wall::StayCollision(Collider* _other)
+{
+
+}
+
+void Wall::ExitCollision(Collider* _other)
+{
+
 }
