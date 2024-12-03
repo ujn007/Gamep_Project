@@ -173,21 +173,38 @@ void Player::EnterCollision(Collider* _other)
 	Object* obj = _other->GetOwner();
 	Object* player = rigid->GetOwner();
 
-	if (obj->GetName() == L"Ground") {
-		cout << "egoirheierhhir" << endl;
+	if (obj->GetName().find(L"Ground") != wstring::npos) {
 		isGround = true;
 		rigid->UseGravity(false);
-		float dis = abs(obj->GetSize().y - player->GetSize().y);
-		float groundPos = obj->GetPos().y - dis / 1.15f;
-		player->SetPos(Vec2(player->GetPos().x, groundPos));
+		float groundUp = (obj->GetPos().y - (obj->GetSize().y * Ratio / 2.f));	
+		float playerDown = (player->GetPos().y + player->GetSize().y / 2);
+		cout << groundUp << endl;
+		float dis = abs(groundUp - playerDown);	
+		float groundPos = player->GetPos().y - dis - 0.1f;	
+
+		//if (groundUp <= playerDown)    
+		//player->SetPos(Vec2(player->GetPos().x, groundPos));	
+	}
+	else if (obj->GetName() == L"Die") {
+		GET_SINGLE(SceneManager)->LoadScene(GET_SINGLE(SceneManager)->GetCurrentSceneName());
+	}
+	else if (obj->GetName() == L"Door") {
+		GET_SINGLE(SceneManager)->LoadNextScene();
 	}
 }
 
 void Player::StayCollision(Collider* _other)
 {
-
+	cout << "StayCollision" << endl;
 }
 
 void Player::ExitCollision(Collider* _other)
 {
+	Object* obj = _other->GetOwner();	
+	Object* player = rigid->GetOwner();	
+
+	if (obj->GetName().find(L"Ground") != wstring::npos) {
+		isGround = false;	
+		rigid->UseGravity(true);	
+	}
 }

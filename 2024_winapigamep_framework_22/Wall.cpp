@@ -11,6 +11,7 @@ Wall::Wall()
 {
 	m_pTex = GET_SINGLE(ResourceManager)->TextureLoad(L"Wall", L"Texture\\Wall.bmp");
 	this->AddComponent<Collider>();
+	enterMove = false;
 }
 
 Wall::~Wall()
@@ -47,7 +48,8 @@ void Wall::SetCollider(Object* owner, Vec2 scale, Vec2 offset)
 
 void Wall::EnterCollision(Collider* _other)
 {
-
+	if(enterMove)
+		GET_SINGLE(DotweenManager)->DoMove(this, GetPos(), enterPos, 1.f);
 }
 
 void Wall::StayCollision(Collider* _other)

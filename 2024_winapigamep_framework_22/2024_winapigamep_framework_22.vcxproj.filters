@@ -160,8 +160,13 @@
     <ClInclude Include="MainBG.h">
       <Filter>Engine\03. Object</Filter>
     </ClInclude>
-    <ClInclude Include="Door.h" />
-    <ClInclude Include="Wall.h" />
+    <ClInclude Include="Wall.h">
+      <Filter>Engine\03. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Door.h">
+      <Filter>Engine\03. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage2.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2024_winapigamep_framework_22.rc">
@@ -270,8 +275,13 @@
     <ClCompile Include="MainBG.cpp">
       <Filter>Engine\03. Object</Filter>
     </ClCompile>
-    <ClCompile Include="Door.cpp" />
-    <ClCompile Include="Wall.cpp" />
+    <ClCompile Include="Door.cpp">
+      <Filter>Engine\03. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>Engine\03. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

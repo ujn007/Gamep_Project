@@ -3,6 +3,7 @@
 #include "TimeManager.h"
 #include "Texture.h"
 #include "ResourceManager.h"
+#include "SceneManager.h"
 #include "Collider.h"
 #include "EventManager.h"
 #include "DotweenManager.h"
@@ -43,7 +44,6 @@ void Door::Render(HDC _hdc)
 
 void Door::EnterCollision(Collider* _other)
 {
-	
 }
 
 void Door::StayCollision(Collider* _other)

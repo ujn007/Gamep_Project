@@ -1,5 +1,6 @@
 #pragma once
 #include "Object.h"
+#include "pch.h"
 class Texture;
 class Wall : public Object
 {
@@ -13,6 +14,10 @@ public:
 	void ExitCollision(Collider* _other) override;
 public:
 	void SetCollider(Object* owner, Vec2 scale, Vec2 offset);
+	void SetEnterPos(Vec2 pos) { enterPos = pos; }
+	void SetMove(bool value) { enterMove = value; }
 private:
 	Texture* m_pTex;
+	Vec2 enterPos;
+	bool enterMove;
 };
