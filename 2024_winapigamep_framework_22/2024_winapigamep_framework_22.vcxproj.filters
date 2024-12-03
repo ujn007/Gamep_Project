@@ -149,7 +149,9 @@
       <Filter>Engine\02. Manager</Filter>
     </ClInclude>
     <ClInclude Include="MainBG.h" />
-    <ClInclude Include="MainScene.h" />
+    <ClInclude Include="MainScene.h">
+      <Filter>Engine\04. Scene</Filter>
+    </ClInclude>
     <ClInclude Include="StartBtn.h" />
   </ItemGroup>
   <ItemGroup>
@@ -248,7 +250,9 @@
       <Filter>Engine\02. Manager</Filter>
     </ClCompile>
     <ClCompile Include="MainBG.cpp" />
-    <ClCompile Include="MainScene.cpp" />
+    <ClCompile Include="MainScene.cpp">
+      <Filter>Engine\04. Scene</Filter>
+    </ClCompile>
     <ClCompile Include="StartBtn.cpp" />
   </ItemGroup>
 </Project>

@@ -39,15 +39,17 @@ Player::Player()
 		Vec2(size, size), Vec2(size, 0.f), 8, 0.1f);
 	GetComponent<Animator>()->CreateAnimation(L"Player_run_Left", m_pTex, Vec2(leftFlip, size * 3),
 		Vec2(size, size), Vec2(size, 0.f), 8, 0.1f);
-	GetComponent<Animator>()->CreateAnimation(L"Player_jump_Right", m_pTex, Vec2(size, size * 5),
-		Vec2(size, size), Vec2(size, 0.f), 3, 0.05f);
-	GetComponent<Animator>()->CreateAnimation(L"Player_jump_Left", m_pTex, Vec2(leftFlip + size, size * 5),
-		Vec2(size, size), Vec2(size, 0.f), 3, 0.05f);
+	GetComponent<Animator>()->CreateAnimation(L"Player_jump_Right", m_pTex, Vec2(size * 2, size * 5),
+		Vec2(size, size), Vec2(size, 0.f), 1, 1);
+	GetComponent<Animator>()->CreateAnimation(L"Player_jump_Left", m_pTex, Vec2(leftFlip + (size * 2), size * 5),
+		Vec2(size, size), Vec2(size, 0.f), 1, 1);
 	GetComponent<Animator>()->CreateAnimation(L"Player_fall_Right", m_pTex, Vec2((size * 4), size * 5),
-		Vec2(size, size), Vec2(size, 0.f), 2, 0.05f);
+		Vec2(size, size), Vec2(size, 0.f), 1, 1);
 	GetComponent<Animator>()->CreateAnimation(L"Player_fall_Left", m_pTex, Vec2(leftFlip + (size * 4), size * 5),
-		Vec2(size, size), Vec2(size, 0.f), 2, 0.05f);
+		Vec2(size, size), Vec2(size, 0.f), 1, 1);
 	GetComponent<Animator>()->PlayAnimation(L"Player_Idle_Right", true);
+
+	GET_SINGLE(ResourceManager)->LoadSound(L"Jump", L"Sound\\Jump.wav", false);
 }
 Player::~Player()
 {
@@ -81,6 +83,8 @@ void Player::HandleMovement()
 		isGround = false;
 		rigid->UseGravity(true);
 		velocity.y = -400.f;
+
+		GET_SINGLE(ResourceManager)->Play(L"Jump");
 	}
 
 	rigid->SetVelocity(velocity);
@@ -93,9 +97,9 @@ void Player::HandleAnimation()
 	// 이동 상태에 따른 애니메이션 선택
 	if (!isGround) {
 		if (rigid->GetVelocity().y <= 0) {
-			targetAnim = isFacingRight ? ANIM::JUMP_RIGHT : ANIM::JUMP_LEFT;
+			targetAnim = isFacingRight ? ANIM::JUMP_RIGHT : ANIM::JUMP_LEFT;	
 		}
-		else if (rigid->GetVelocity().y > 0) {
+		else if (rigid->GetVelocity().y > 0) {	
 			targetAnim = isFacingRight ? ANIM::FALL_RIGHT : ANIM::FALL_LEFT;
 		}
 	}
@@ -174,7 +178,6 @@ void Player::EnterCollision(Collider* _other)
 	Object* player = rigid->GetOwner();
 
 	if (obj->GetName() == L"Ground") {
-		cout << "degfh erwiugthweiugtwe" << endl;
 		isGround = true;
 		rigid->UseGravity(false);
 		float dis = abs(obj->GetSize().y - player->GetSize().y);
