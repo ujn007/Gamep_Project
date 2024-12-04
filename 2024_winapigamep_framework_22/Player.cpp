@@ -15,6 +15,9 @@ Player::Player()
 	, isJump(false)
 	, isGround(false)
 	, currentAnim(ANIM::IDLE_RIGHT)
+	, currentCol(COLDIR::DOWN)
+	, isLeftCollision(false)
+	, isRightCollision(false)
 {
 	//m_pTex = new Texture;
 	//wstring path = GET_SINGLE(ResourceManager)->GetResPath();
@@ -66,11 +69,11 @@ void Player::HandleMovement()
 {
 	Vec2 velocity = rigid->GetVelocity();
 
-	if (GET_KEY(KEY_TYPE::A) && 0 + 10 < GetPos().x) {
+	if (GET_KEY(KEY_TYPE::A) && 0 + 10 < GetPos().x && !isLeftCollision) {
 		velocity.x = -250.f;
 		isFacingRight = false;
 	}
-	else if (GET_KEY(KEY_TYPE::D) && SCREEN_WIDTH - 10 > GetPos().x) {
+	else if (GET_KEY(KEY_TYPE::D) && SCREEN_WIDTH - 10 > GetPos().x && !isRightCollision) {
 		velocity.x = 250.f;
 		isFacingRight = true;
 	}
@@ -97,9 +100,9 @@ void Player::HandleAnimation()
 	// 이동 상태에 따른 애니메이션 선택
 	if (!isGround) {
 		if (rigid->GetVelocity().y <= 0) {
-			targetAnim = isFacingRight ? ANIM::JUMP_RIGHT : ANIM::JUMP_LEFT;	
+			targetAnim = isFacingRight ? ANIM::JUMP_RIGHT : ANIM::JUMP_LEFT;
 		}
-		else if (rigid->GetVelocity().y > 0) {	
+		else if (rigid->GetVelocity().y > 0) {
 			targetAnim = isFacingRight ? ANIM::FALL_RIGHT : ANIM::FALL_LEFT;
 		}
 	}
@@ -177,21 +180,70 @@ void Player::EnterCollision(Collider* _other)
 	Object* obj = _other->GetOwner();
 	Object* player = rigid->GetOwner();
 
+	Vec2 playerTopLeft = player->GetDirPos(DIR::UP_LEFT);
+	Vec2 playerBottomRight = player->GetDirPos(DIR::DOWN_RIGHT);
+
+	Vec2 objTopLeft = obj->GetDirPos(DIR::UP_LEFT);
+	Vec2 objBottomRight = obj->GetDirPos(DIR::DOWN_RIGHT);
+	cout << objTopLeft.y << " " << playerBottomRight.y << endl;
 	if (obj->GetName() == L"Ground") {
-		cout << "egoirheierhhir" << endl;
-		isGround = true;
-		rigid->UseGravity(false);
-		float dis = abs(obj->GetSize().y - player->GetSize().y);
-		float groundPos = obj->GetPos().y - dis / 1.15f;
-		player->SetPos(Vec2(player->GetPos().x, groundPos));
+		if (playerBottomRight.y >= objTopLeft.y && playerTopLeft.y < objTopLeft.y) {
+			cout << "DOWN" << endl;
+			currentCol = COLDIR::DOWN;
+			isGround = true;
+			rigid->UseGravity(false);
+			float newPos = objTopLeft.y - playerBottomRight.y;
+			if (newPos < 0) 
+				player->SetPos(Vec2(player->GetPos().x, player->GetPos().y + newPos + 1.f));
+		}
+
+		if (playerTopLeft.y <= objBottomRight.y && playerBottomRight.y > objBottomRight.y) {
+			cout << "UP" << endl;
+			currentCol = COLDIR::UP;
+			rigid->SetVelocity({ rigid->GetVelocity().x, 0.f });
+			float newPos = objTopLeft.y - playerBottomRight.y;
+			if (newPos > 0)
+				player->SetPos(Vec2(player->GetPos().x, player->GetPos().y + newPos));
+		}
+
+		if (playerBottomRight.x >= objTopLeft.x - 2.f && playerTopLeft.x < objTopLeft.x) {	
+			cout << "RIGHT" << endl;
+			currentCol = COLDIR::RIGHT;
+			isRightCollision = true;
+		}
+
+		if (playerTopLeft.x <= objBottomRight.x && playerBottomRight.x > objBottomRight.x) {
+			cout << "LEFT" << endl;
+			currentCol = COLDIR::LEFT;	
+			isLeftCollision = true;
+		}
 	}
 }
 
 void Player::StayCollision(Collider* _other)
 {
-
 }
 
 void Player::ExitCollision(Collider* _other)
 {
+	Object* obj = _other->GetOwner();
+
+	if (obj->GetName() == L"Ground" ) {
+		switch (currentCol)
+		{
+		case COLDIR::UP:
+			break;
+		case COLDIR::DOWN:
+			rigid->UseGravity(true);
+			break;
+		case COLDIR::LEFT:
+			isLeftCollision = false;	
+			break;	
+		case COLDIR::RIGHT:
+			isRightCollision = false;	
+			break;
+		default:
+			break;
+		}
+	}
 }

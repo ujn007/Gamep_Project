@@ -44,6 +44,9 @@
     <Filter Include="Engine\06. Component\RigidBody">
       <UniqueIdentifier>{a8b2d107-8397-47cc-9cf4-9abdaeff79bb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Object\UI">
+      <UniqueIdentifier>{31356393-cae6-48fa-b465-35505268d75d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="2024_winapigamep_framework_22.h">
@@ -148,12 +151,6 @@
     <ClInclude Include="DotweenManager.h">
       <Filter>Engine\02. Manager</Filter>
     </ClInclude>
-    <ClInclude Include="StartBtn.h">
-      <Filter>Engine\03. Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Quit.h">
-      <Filter>Engine\03. Object</Filter>
-    </ClInclude>
     <ClInclude Include="MainScene.h">
       <Filter>Engine\04. Scene</Filter>
     </ClInclude>
@@ -162,6 +159,15 @@
     </ClInclude>
     <ClInclude Include="Door.h" />
     <ClInclude Include="Wall.h" />
+    <ClInclude Include="Test.h">
+      <Filter>Engine\03. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="StartBtn.h">
+      <Filter>Engine\03. Object\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Quit.h">
+      <Filter>Engine\03. Object\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2024_winapigamep_framework_22.rc">
@@ -258,12 +264,6 @@
     <ClCompile Include="DotweenManager.cpp">
       <Filter>Engine\02. Manager</Filter>
     </ClCompile>
-    <ClCompile Include="Quit.cpp">
-      <Filter>Engine\03. Object</Filter>
-    </ClCompile>
-    <ClCompile Include="StartBtn.cpp">
-      <Filter>Engine\03. Object</Filter>
-    </ClCompile>
     <ClCompile Include="MainScene.cpp">
       <Filter>Engine\04. Scene</Filter>
     </ClCompile>
@@ -272,6 +272,15 @@
     </ClCompile>
     <ClCompile Include="Door.cpp" />
     <ClCompile Include="Wall.cpp" />
+    <ClCompile Include="Test.cpp">
+      <Filter>Engine\03. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="StartBtn.cpp">
+      <Filter>Engine\03. Object\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Quit.cpp">
+      <Filter>Engine\03. Object\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

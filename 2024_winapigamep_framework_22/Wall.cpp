@@ -30,14 +30,24 @@ void Wall::Render(HDC _hdc)
 	//	, vSize.x, vSize.y);
 	int width = m_pTex->GetWidth();
 	int height = m_pTex->GetHeight();
+	//cout << "Render : " << vPos.x - width * vSize.x * 6.7f << endl;
+
+	/*::BitBlt(_hdc
+		, (vPos.x - width * vSize.x)
+		, (vPos.y - height * vSize.y)
+		, vSize.x, vSize.y
+		, m_pTex->GetTexDC()
+		, 0, 0
+		, SRCCOPY
+	);*/
 	::StretchBlt(_hdc
-		, (vPos.x - width * vSize.x * 6.7f)
-		, (vPos.y - height * vSize.y * 6.7f)
-		, vSize.x * Ratio, vSize.y * Ratio,
-		m_pTex->GetTexDC()
+		, vPos.x - (vSize.x / 2.f)
+		, vPos.y - (vSize.y / 2.f)
+		, vSize.x, vSize.y
+		, m_pTex->GetTexDC()
 		, 0
-		, 0, 
-		width, height, SRCCOPY);
+		, 0
+		, width, height, SRCCOPY);
 	ComponentRender(_hdc);
 }
 void Wall::SetCollider(Object* owner, Vec2 scale, Vec2 offset)

@@ -21,8 +21,11 @@ private:
 	RigidBody* rigid;
 	Texture* m_pTex;
 	ANIM currentAnim;
+	COLDIR currentCol;
 	bool isJump;
 	bool isGround;
 	bool isFacingRight;
+	bool isLeftCollision;
+	bool isRightCollision;
 };
 

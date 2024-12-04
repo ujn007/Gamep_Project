@@ -24,6 +24,20 @@ enum class ANIM
 	FALL_LEFT
 };
 
+enum class DIR
+{
+	UP_LEFT,
+	DOWN_RIGHT
+};
+
+enum class COLDIR
+{
+	UP,
+	DOWN,
+	LEFT,
+	RIGHT
+};
+
 enum class PEN_TYPE
 {
 	HOLLOW, RED, GREEN,

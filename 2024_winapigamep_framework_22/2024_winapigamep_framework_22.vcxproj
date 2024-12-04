@@ -197,6 +197,7 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="StartBtn.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Test.h" />
     <ClInclude Include="TestGround.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TimeManager.h" />
@@ -233,6 +234,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="StartBtn.cpp" />
+    <ClCompile Include="Test.cpp" />
     <ClCompile Include="TestGround.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TimeManager.cpp" />
