@@ -2,16 +2,19 @@
 #include "SceneManager.h"
 #include "Scene.h"
 #include "Stage1.h"
-//#include "Stage2.h"
+#include "Stage2.h"
 #include "GameScene.h"
 #include "MainScene.h"
+#include <string>
+#include <sstream>
+
 void SceneManager::Init()
 {
 	m_pCurrentScene = nullptr;
 
 	// 씬 등록
 	RegisterScene(L"Stage1",std::make_shared<Stage1>());
-	//RegisterScene(L"Stage2",std::make_shared<Stage2>());
+	RegisterScene(L"Stage2",std::make_shared<Stage2>());
 	RegisterScene(L"GameScene",std::make_shared<GameScene>());
 	RegisterScene(L"MainScene",std::make_shared<MainScene>());
 
@@ -57,4 +60,31 @@ void SceneManager::LoadScene(const wstring& _sceneName)
 		m_pCurrentScene = iter->second;
 		m_pCurrentScene->Init();
 	}
+}
+
+void SceneManager::LoadNextScene()
+{
+	LoadScene(GetNextSceneName(GetCurrentSceneName()));
+}
+
+wstring SceneManager::GetNextSceneName(const wstring& _sceneName)
+{
+	if (!_sceneName.empty()) {
+		// wstring -> string 변환
+		std::string str(_sceneName.begin(), _sceneName.end());
+
+		// 마지막 글자가 숫자인지 확인
+		if (isdigit(str.back())) {
+			// 숫자로 변환 후 1 더하기
+			int number = str.back() - '0' + 1;
+
+			// 마지막 글자 제거 후 새 숫자 추가
+			str.pop_back();
+			str += std::to_string(number);
+		}
+
+		// 결과 출력
+		return std::wstring(str.begin(), str.end());
+	}
+	return L"";
 }

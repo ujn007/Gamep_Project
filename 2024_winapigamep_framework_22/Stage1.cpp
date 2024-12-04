@@ -55,7 +55,7 @@ void Stage1::Init()
 		AddObject(spines[i], LAYER::PROJECTILE);
 	}*/
 
-	Object* pGround = new Wall;
+	Wall* pGround = new Wall;
 	pGround->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f + 340.f });
 	pGround->SetSize({ 1280.f , 100.f });
 	pGround->GetComponent<Collider>()->SetSize(pGround->GetSize());
@@ -93,5 +93,5 @@ void Stage1::Update()
 {
 	Scene::Update();
 	if (GET_KEYDOWN(KEY_TYPE::ENTER))
-		GET_SINGLE(SceneManager)->LoadScene(L"GameScene");
+		GET_SINGLE(SceneManager)->LoadNextScene();
 }
