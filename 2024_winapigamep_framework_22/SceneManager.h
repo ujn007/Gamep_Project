@@ -18,7 +18,7 @@ public:
 	{
 		return m_pCurrentScene;
 	}
-	const wstring GetCurrentSceneName() const {
+	wstring GetCurrentSceneName() {
 		return m_currentSceneName;
 	}
 private:

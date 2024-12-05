@@ -12,6 +12,10 @@
 #include "RigidBody.h"
 #include "PlayerDirCollider.h"
 #include "CollisionManager.h"
+#include <string>
+#include <locale>
+#include <cstdlib>
+
 
 Player::Player()
 	: m_pTex(nullptr)
@@ -182,8 +186,16 @@ void Player::Render(HDC _hdc)
 void Player::EnterCollision(Collider* _other)
 {
 	Object* obj = _other->GetOwner();
+	Object* player = rigid->GetOwner();
+	//std::wcout << obj->GetName();
 
-	if (obj->GetName() == L"Door") {
+	if (obj->GetName() == L"Die") {
+		GET_SINGLE(SceneManager)->LoadScene(GET_SINGLE(SceneManager)->GetCurrentSceneName());
+		cout << "DDDDDIEIEIEIEIE" << endl;
+		return;
+	}
+	else if (obj->GetName() == L"Door") {
 		GET_SINGLE(SceneManager)->LoadNextScene();
+		cout << "DDDDD" << endl;
 	}
 }

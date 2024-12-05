@@ -20,14 +20,16 @@ void Stage2::Init()
 {
 	Object* pPlayer = new Player;
 	pPlayer->SetPos({ 100.f,500.f });
-	pPlayer->SetSize({ 30.f,30.f });
+	pPlayer->SetSize({ 20.f,30.f });
 	pPlayer->SetName(L"Player");
 	AddObject(pPlayer, LAYER::PLAYER);
 
 	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::ENEMY);
 	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::BACKGROUND, LAYER::PLAYER);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER);
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::DOOR, LAYER::PLAYER);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::PLAYER);
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER_DIR_COL);
 	//GET_SINGLE(ResourceManager)->LoadSound(L"BGM", L"Sound\\Retro_bgm.wav", true);
 	//GET_SINGLE(ResourceManager)->Play(L"BGM");
 
@@ -88,12 +90,12 @@ void Stage2::Init()
 	pDoor->SetPos({ 1100.f, 600.f });
 	pDoor->SetSize({ Ratio, Ratio });
 	pDoor->SetName(L"Door");
-	AddObject(pDoor, LAYER::GROUND);
+	AddObject(pDoor, LAYER::DOOR);
 }
 
 void Stage2::Update()
 {
 	Scene::Update();
 	if (GET_KEYDOWN(KEY_TYPE::ENTER))
-		GET_SINGLE(SceneManager)->LoadNextScene();
+		GET_SINGLE(SceneManager)->LoadScene(GET_SINGLE(SceneManager)->GetCurrentSceneName());
 }

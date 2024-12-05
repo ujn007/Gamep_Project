@@ -43,7 +43,7 @@ void Spine::Render(HDC _hdc)
 		, (int)(vPos.y - height * vSize.y / 2)
 		, width * vSize.x, height * vSize.y,
 		m_pTex->GetTexDC()
-		, 0, 0, width, height, RGB(255, 255, 255));
+		, 0, 0, width, height, RGB(255, 0, 255));
 	ComponentRender(_hdc);
 }
 
