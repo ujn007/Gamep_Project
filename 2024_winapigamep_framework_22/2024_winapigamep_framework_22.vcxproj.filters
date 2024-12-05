@@ -167,6 +167,7 @@
       <Filter>Engine\03. Object</Filter>
     </ClInclude>
     <ClInclude Include="Stage2.h" />
+    <ClInclude Include="Stage3.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2024_winapigamep_framework_22.rc">
@@ -282,6 +283,7 @@
       <Filter>Engine\03. Object</Filter>
     </ClCompile>
     <ClCompile Include="Stage2.cpp" />
+    <ClCompile Include="Stage3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

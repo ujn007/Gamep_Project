@@ -3,6 +3,7 @@
 #include "Scene.h"
 #include "Stage1.h"
 #include "Stage2.h"
+#include "Stage3.h"
 #include "GameScene.h"
 #include "MainScene.h"
 #include <string>
@@ -15,6 +16,7 @@ void SceneManager::Init()
 	// ¾À µî·Ï
 	RegisterScene(L"Stage1",std::make_shared<Stage1>());
 	RegisterScene(L"Stage2",std::make_shared<Stage2>());
+	RegisterScene(L"Stage3",std::make_shared<Stage3>());
 	RegisterScene(L"GameScene",std::make_shared<GameScene>());
 	RegisterScene(L"MainScene",std::make_shared<MainScene>());
 
