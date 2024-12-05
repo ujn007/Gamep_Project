@@ -167,7 +167,10 @@
       <Filter>Engine\03. Object</Filter>
     </ClInclude>
     <ClInclude Include="Stage2.h" />
-    <ClInclude Include="Stage3.h" />
+    <ClInclude Include="Test.h" />
+    <ClInclude Include="PlayerDirCollider.h">
+      <Filter>Engine\03. Object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2024_winapigamep_framework_22.rc">
@@ -283,7 +286,10 @@
       <Filter>Engine\03. Object</Filter>
     </ClCompile>
     <ClCompile Include="Stage2.cpp" />
-    <ClCompile Include="Stage3.cpp" />
+    <ClCompile Include="Test.cpp" />
+    <ClCompile Include="PlayerDirCollider.cpp">
+      <Filter>Engine\03. Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

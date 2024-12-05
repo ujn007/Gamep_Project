@@ -2,6 +2,7 @@
 enum class LAYER
 {
 	DEFAULT,
+	PLAYER_DIR_COL,
 	BACKGROUND,
 	GROUND,
 	PLAYER,
@@ -22,6 +23,22 @@ enum class ANIM
 	JUMP_LEFT,
 	FALL_RIGHT,
 	FALL_LEFT
+};
+
+enum class DIR
+{
+	LEFT,
+	RIGHT,
+	BOTTOM,
+	TOP
+};
+
+enum class COLDIR
+{
+	UP,
+	DOWN,
+	LEFT,
+	RIGHT
 };
 
 enum class PEN_TYPE

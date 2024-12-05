@@ -24,7 +24,6 @@ public:
 	void SetDead() { m_IsDie = true; }
 	void SetName(wstring _name) { m_name = _name; }
 	const wstring& GetName() const { return m_name; }
-
 private:
 	bool m_IsDie;
 	wstring m_name;
@@ -54,5 +53,6 @@ private:
 	Vec2 m_vPos;
 	Vec2 m_vSize;
 	vector<Component*> m_vecComponents;
+	map<DIR, Vec2> m_objPosMap;
 };
 

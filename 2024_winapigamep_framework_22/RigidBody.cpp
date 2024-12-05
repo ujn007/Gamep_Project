@@ -64,7 +64,7 @@ void RigidBody::finalUpdate()
 
 void RigidBody::Gravity()
 {
-	if (useGravity == false) 
+	if (useGravity == false)
 		m_vVelocity.y = 0.f;
 	else
 		m_vVelocity.y += m_gravity * fDT;
@@ -87,7 +87,11 @@ void RigidBody::Move()
 		Vec2 vDir = m_vVelocity;
 		vDir.Normalize();
 		float speed = m_vVelocity.Length();
-		vPos += m_vVelocity * fDT;
+
+		if (!(m_isStopMoveLeft && m_vVelocity.x < 0)	
+			&& !(m_isStopMoveRight && m_vVelocity.x > 0))	
+			vPos.x += m_vVelocity.x * fDT;
+		vPos.y += m_vVelocity.y * fDT;
 	}
 
 	GetOwner()->SetPos(vPos);

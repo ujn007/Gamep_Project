@@ -32,10 +32,19 @@ public:
     void SetMaxVelocity(float _Speed) { m_fMaxSpeed = _Speed; }
 
     void Gravity();
+
+    void StopMoveLeft(bool v) { m_isStopMoveLeft = v; }
+    void StopMoveRight(bool v) { m_isStopMoveRight = v; }
+    bool IsStopMoveLeft() { return m_isStopMoveLeft; }
+    bool IsStopMoveRight() { return m_isStopMoveRight; }
+    void StopVeloY() { m_vVelocity.y = 0; }
 private:
     void Move();
 
 public:
     void LateUpdate() override;
     void Render(HDC _hdc) override;
+private :
+    bool m_isStopMoveLeft;
+    bool m_isStopMoveRight;
 };

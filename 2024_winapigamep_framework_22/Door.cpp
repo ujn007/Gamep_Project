@@ -3,7 +3,6 @@
 #include "TimeManager.h"
 #include "Texture.h"
 #include "ResourceManager.h"
-#include "SceneManager.h"
 #include "Collider.h"
 #include "EventManager.h"
 #include "DotweenManager.h"
@@ -12,8 +11,8 @@ Door::Door()
 {
 	m_pTex = GET_SINGLE(ResourceManager)->TextureLoad(L"Door", L"Texture\\Door.bmp");
 	this->AddComponent<Collider>();
-	GetComponent<Collider>()->SetSize({ 1.f, 2.f });
-	GetComponent<Collider>()->SetOffSetPos({ 0.f, 0.5f });
+	GetComponent<Collider>()->SetSize({ 1.f * Ratio, 2.f * Ratio });
+	GetComponent<Collider>()->SetOffSetPos({ 0.f, 12.f });
 }
 
 Door::~Door()
@@ -44,6 +43,7 @@ void Door::Render(HDC _hdc)
 
 void Door::EnterCollision(Collider* _other)
 {
+
 }
 
 void Door::StayCollision(Collider* _other)
