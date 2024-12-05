@@ -24,17 +24,6 @@ public:
 	void SetDead() { m_IsDie = true; }
 	void SetName(wstring _name) { m_name = _name; }
 	const wstring& GetName() const { return m_name; }
-public:
-	 const Vec2& GetDirPos(DIR dir) {
-		 switch (dir) {
-		 case DIR::UP_LEFT:
-			 return Vec2(m_vPos.x - (m_vSize.x / 2.f), m_vPos.y - (m_vSize.y / 2.f));
-		 case DIR::DOWN_RIGHT:
-			 return Vec2(m_vPos.x + (m_vSize.x / 2.f), m_vPos.y + (m_vSize.y / 2.f));
-		 default:
-			 return m_vPos; 
-		 }
-	 }
 private:
 	bool m_IsDie;
 	wstring m_name;

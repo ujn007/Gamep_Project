@@ -2,6 +2,7 @@
 enum class LAYER
 {
 	DEFAULT,
+	PLAYER_DIR_COL,
 	BACKGROUND,
 	GROUND,
 	PLAYER,
@@ -26,8 +27,10 @@ enum class ANIM
 
 enum class DIR
 {
-	UP_LEFT,
-	DOWN_RIGHT
+	LEFT,
+	RIGHT,
+	BOTTOM,
+	TOP
 };
 
 enum class COLDIR

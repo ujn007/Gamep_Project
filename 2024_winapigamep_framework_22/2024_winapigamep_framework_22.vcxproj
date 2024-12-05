@@ -187,6 +187,7 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerDirCollider.h" />
     <ClInclude Include="Quit.h" />
     <ClInclude Include="Spine.h" />
     <ClInclude Include="Resource.h" />
@@ -227,6 +228,7 @@
     <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerDirCollider.cpp" />
     <ClCompile Include="Quit.cpp" />
     <ClCompile Include="Spine.cpp" />
     <ClCompile Include="ResourceBase.cpp" />
