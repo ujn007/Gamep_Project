@@ -22,12 +22,14 @@ void Stage3::Init()
 	pPlayer->SetPos({ 100.f,500.f });
 	pPlayer->SetSize({ 30.f,30.f });
 	pPlayer->SetName(L"Player");
+	pPlayer->GetComponent<Collider>()->SetOwner(pPlayer);
 	AddObject(pPlayer, LAYER::PLAYER);
 
 	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::ENEMY);
 	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::BACKGROUND, LAYER::PLAYER);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::PLAYER);
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::PLAYER_DIR_COL);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER_DIR_COL);
 	//GET_SINGLE(ResourceManager)->LoadSound(L"BGM", L"Sound\\Retro_bgm.wav", true);
 	//GET_SINGLE(ResourceManager)->Play(L"BGM");
@@ -40,17 +42,17 @@ void Stage3::Init()
 	GET_SINGLE(TimeManager)->GetDT();
 
 	vector<Vec2> spinePos;
-	spinePos.push_back({ 400.f, SCREEN_HEIGHT / 2.f + 340.f });
-	spinePos.push_back({ 500.f, SCREEN_HEIGHT / 2.f + 340.f });
-	spinePos.push_back({ 600.f, SCREEN_HEIGHT / 2.f + 340.f });
-	spinePos.push_back({ 700.f, SCREEN_HEIGHT / 2.f + 340.f });
+	spinePos.push_back({ 600.f, SCREEN_HEIGHT / 2.f + 265.f });
+	spinePos.push_back({ 400.f, SCREEN_HEIGHT / 2.f + 265.f });
 
 	vector<Object*> spines;
 	for (int i = 0; i < spinePos.size(); i++) {
 		spines.push_back(new Spine);
 		spines[i]->SetPos(spinePos[i]);
-		spines[i]->SetSize({Ratio * 0.3f ,Ratio * 0.3f});
-		spines[i]->SetName(L"Die");
+		spines[i]->SetSize({Ratio * 0.15f ,Ratio * 0.15f});
+		spines[i]->GetComponent<Collider>()->SetOwner(spines[i]);
+
+		spines[i]->SetName(L"Die" + std::to_wstring(i));
 
 		AddObject(spines[i], LAYER::PROJECTILE);
 	}

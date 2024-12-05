@@ -97,5 +97,5 @@ void Stage2::Update()
 {
 	Scene::Update();
 	if (GET_KEYDOWN(KEY_TYPE::ENTER))
-		GET_SINGLE(SceneManager)->LoadScene(GET_SINGLE(SceneManager)->GetCurrentSceneName());
+		GET_SINGLE(SceneManager)->LoadNextScene();
 }

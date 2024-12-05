@@ -52,6 +52,7 @@ void SceneManager::LoadScene(const wstring& _sceneName)
 	if (m_pCurrentScene != nullptr)
 	{
 		m_pCurrentScene->Release();
+		cout << "asfdsdfdfsdf";
 		m_currentSceneName = _sceneName;
 		m_pCurrentScene = nullptr;
 	}

@@ -187,15 +187,12 @@ void Player::EnterCollision(Collider* _other)
 {
 	Object* obj = _other->GetOwner();
 	Object* player = rigid->GetOwner();
-	//std::wcout << obj->GetName();
+	std::wcout << obj->GetName();
 
-	if (obj->GetName() == L"Die") {
+	if (obj->GetName().find(L"Die") != wstring::npos) {
 		GET_SINGLE(SceneManager)->LoadScene(GET_SINGLE(SceneManager)->GetCurrentSceneName());
-		cout << "DDDDDIEIEIEIEIE" << endl;
-		return;
 	}
 	else if (obj->GetName() == L"Door") {
 		GET_SINGLE(SceneManager)->LoadNextScene();
-		cout << "DDDDD" << endl;
 	}
 }
