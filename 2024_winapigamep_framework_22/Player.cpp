@@ -178,3 +178,12 @@ void Player::Render(HDC _hdc)
 	int height = m_pTex->GetHeight();
 	ComponentRender(_hdc);
 }
+
+void Player::EnterCollision(Collider* _other)
+{
+	Object* obj = _other->GetOwner();
+
+	if (obj->GetName() == L"Door") {
+		GET_SINGLE(SceneManager)->LoadNextScene();
+	}
+}

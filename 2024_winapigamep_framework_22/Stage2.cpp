@@ -56,31 +56,31 @@ void Stage2::Init()
 
 	Wall* pGround = new Wall;
 	pGround->SetPos({ SCREEN_WIDTH / 2.f - 450.f, SCREEN_HEIGHT / 2.f + 340.f });
-	pGround->SetSize({ 50.f ,5.f });
+	pGround->SetSize({ 50.f * Ratio ,5.f * Ratio });
 	pGround->GetComponent<Collider>()->SetSize(pGround->GetSize());
 	pGround->SetName(L"Ground");
 	AddObject(pGround, LAYER::GROUND);
 
 	pGround = new Wall;
 	pGround->SetPos({ SCREEN_WIDTH / 2.f + 550.f, SCREEN_HEIGHT / 2.f + 340.f });
-	pGround->SetSize({ 15.f ,5.f });
+	pGround->SetSize({ 15.f * Ratio ,5.f * Ratio });
 	pGround->GetComponent<Collider>()->SetSize(pGround->GetSize());
 	pGround->SetName(L"Ground2");
 	AddObject(pGround, LAYER::GROUND);
 
 	pGround = new Wall;
 	pGround->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f + 540.f });
-	pGround->SetSize({ 100.f ,5.f });
+	pGround->SetSize({ 100.f * Ratio ,5.f * Ratio });
 	pGround->GetComponent<Collider>()->SetSize(pGround->GetSize());
 	pGround->SetName(L"Die");
 	AddObject(pGround, LAYER::GROUND);
 
 	pGround = new Wall;
 	pGround->SetPos({ SCREEN_WIDTH / 2.f + 300.f, SCREEN_HEIGHT / 2.f + 340.f });
-	pGround->SetSize({ 5.5f ,5.f });
+	pGround->SetSize({ 5.5f * Ratio ,5.f * Ratio });
 	pGround->SetEnterPos({ SCREEN_WIDTH / 2.f + 300.f, SCREEN_HEIGHT / 2.f + 640.f });
 	pGround->SetMove(true);
-	pGround->GetComponent<Collider>()->SetSize({ 7.f ,7.f });
+	pGround->GetComponent<Collider>()->SetSize({ 7.f * Ratio ,7.f * Ratio });
 	pGround->SetName(L"Trab");
 	AddObject(pGround, LAYER::GROUND);
 
