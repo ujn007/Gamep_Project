@@ -3,6 +3,7 @@
 #include "TimeManager.h"
 #include "InputManager.h"
 #include "SceneManager.h"
+#include "EventManager.h"
 #include "Scene.h"
 #include "Texture.h"
 #include "ResourceManager.h"
@@ -77,10 +78,6 @@ Player::Player()
 		Vec2(size, size), Vec2(size, 0.f), 1, 1);
 	GetComponent<Animator>()->CreateAnimation(L"Player_fall_Left", m_pTex, Vec2(leftFlip + (size * 4), size * 5),
 		Vec2(size, size), Vec2(size, 0.f), 1, 1);
-	GetComponent<Animator>()->CreateAnimation(L"Player_die_Right", m_pTex, Vec2(0.f, size * 6),
-		Vec2(size, size), Vec2(size, 0.f), 5, 0.05f);
-	GetComponent<Animator>()->CreateAnimation(L"Player_die_Left", m_pTex, Vec2(leftFlip, size * 6),	
-		Vec2(size, size), Vec2(size, 0.f), 5, 0.05f);
 	GetComponent<Animator>()->PlayAnimation(L"Player_Idle_Right", true);
 #pragma endregion
 
@@ -120,10 +117,6 @@ void Player::HandleMovement()
 		velocity.y = -400.f;
 
 		GET_SINGLE(ResourceManager)->Play(L"Jump");
-	}
-
-	if (GET_KEYDOWN(KEY_TYPE::F)) {
-		GetComponent<Animator>()->PlayAnimation(L"Player_die_Right", true);
 	}
 
 	rigid->SetVelocity(velocity);
@@ -195,16 +188,17 @@ void Player::EnterCollision(Collider* _other)
 {
 	Object* obj = _other->GetOwner();
 	Object* player = rigid->GetOwner();
-	//std::wcout << obj->GetName();
+	std::wcout << obj->GetName();
 
-	if (obj->GetName() == L"Die") {
-		GET_SINGLE(SceneManager)->LoadScene(GET_SINGLE(SceneManager)->GetCurrentSceneName());
-
-		isFacingRight ? GetComponent<Animator>()->PlayAnimation(L"Player_die_Left", true) 
+	if (obj->GetName().find(L"Die") != wstring::npos) {
+		/*isFacingRight ? GetComponent<Animator>()->PlayAnimation(L"Player_die_Left", true)
 			: GetComponent<Animator>()->PlayAnimation(L"Player_die_Right", true);
+
+		Sleep(500);*/
+
+		GET_SINGLE(EventManager)->LoadScene(GET_SINGLE(SceneManager)->GetCurrentSceneName());	
 	}
 	else if (obj->GetName() == L"Door") {
 		GET_SINGLE(SceneManager)->LoadNextScene();
-		cout << "DDDDD" << endl;
 	}
 }

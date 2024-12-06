@@ -57,18 +57,9 @@ void Core::CleanUp()
 
 void Core::GameLoop()
 {
-	//static int callcount = 0;
-	//++callcount;
-	//static int prev = GetTickCount64();
-	//int cur = GetTickCount64();
-	//if (cur - prev > 1000)
-	//{
-	//	prev = cur;
-	//	callcount = 0;
-	//}
 	MainUpdate();
-	GET_SINGLE(EventManager)->Update();
 	MainRender();
+	GET_SINGLE(EventManager)->Update();
 }
 
 

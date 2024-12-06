@@ -79,6 +79,6 @@ void Scene::Release()
 		}
 		m_vecObj[i].clear();
 	}
-	//cout << "Release : " << m_vecObj->size() << endl;
+	cout << "Release : " << m_vecObj->size() << endl;
 	GET_SINGLE(CollisionManager)->CheckReset();
 }

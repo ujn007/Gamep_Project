@@ -15,9 +15,9 @@ public:
 public:
 	void SetCollider(Object* owner, Vec2 scale, Vec2 offset);
 	void SetEnterPos(Vec2 pos) { enterPos = pos; }
-	void SetMove(bool value) { enterMove = value; }
+	void SetMode(TweenMode value) { enterMove = value; }
 private:
 	Texture* m_pTex;
 	Vec2 enterPos;
-	bool enterMove;
+	TweenMode enterMove;
 };
