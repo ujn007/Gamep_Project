@@ -198,6 +198,7 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Stage2.h" />
     <ClInclude Include="Stage3.h" />
+    <ClInclude Include="Stage4.h" />
     <ClInclude Include="StartBtn.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Test.h" />
@@ -239,6 +240,7 @@
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Stage2.cpp" />
     <ClCompile Include="Stage3.cpp" />
+    <ClCompile Include="Stage4.cpp" />
     <ClCompile Include="StartBtn.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="TestGround.cpp" />

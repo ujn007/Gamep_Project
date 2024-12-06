@@ -26,6 +26,7 @@ public:
 
     // DoMove Ãß°¡
     void DoMove(Object* target, Vec2 startPos, Vec2 endPos, float duration);
+    void Release();
 
 private:
     std::vector<Tween> tweens;

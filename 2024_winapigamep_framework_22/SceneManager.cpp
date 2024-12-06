@@ -4,8 +4,10 @@
 #include "Stage1.h"
 #include "Stage2.h"
 #include "Stage3.h"
+#include "Stage4.h"
 #include "GameScene.h"
 #include "MainScene.h"
+#include "DotweenManager.h"
 #include <string>
 #include <sstream>
 
@@ -17,6 +19,7 @@ void SceneManager::Init()
 	RegisterScene(L"Stage1",std::make_shared<Stage1>());
 	RegisterScene(L"Stage2",std::make_shared<Stage2>());
 	RegisterScene(L"Stage3",std::make_shared<Stage3>());
+	RegisterScene(L"Stage4",std::make_shared<Stage4>());
 	RegisterScene(L"GameScene",std::make_shared<GameScene>());
 	RegisterScene(L"MainScene",std::make_shared<MainScene>());
 
@@ -52,7 +55,7 @@ void SceneManager::LoadScene(const wstring& _sceneName)
 	if (m_pCurrentScene != nullptr)
 	{
 		m_pCurrentScene->Release();
-		cout << "asfdsdfdfsdf";
+		GET_SINGLE(DotweenManager)->Release();
 		m_currentSceneName = _sceneName;
 		m_pCurrentScene = nullptr;
 	}

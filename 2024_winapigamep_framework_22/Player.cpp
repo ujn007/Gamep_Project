@@ -3,6 +3,7 @@
 #include "TimeManager.h"
 #include "InputManager.h"
 #include "SceneManager.h"
+#include "EventManager.h"
 #include "Scene.h"
 #include "Texture.h"
 #include "ResourceManager.h"
@@ -190,7 +191,12 @@ void Player::EnterCollision(Collider* _other)
 	std::wcout << obj->GetName();
 
 	if (obj->GetName().find(L"Die") != wstring::npos) {
-		GET_SINGLE(SceneManager)->LoadScene(GET_SINGLE(SceneManager)->GetCurrentSceneName());
+		/*isFacingRight ? GetComponent<Animator>()->PlayAnimation(L"Player_die_Left", true)
+			: GetComponent<Animator>()->PlayAnimation(L"Player_die_Right", true);
+
+		Sleep(500);*/
+
+		GET_SINGLE(EventManager)->LoadScene(GET_SINGLE(SceneManager)->GetCurrentSceneName());	
 	}
 	else if (obj->GetName() == L"Door") {
 		GET_SINGLE(SceneManager)->LoadNextScene();

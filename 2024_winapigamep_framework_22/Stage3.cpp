@@ -28,8 +28,8 @@ void Stage3::Init()
 	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::ENEMY);
 	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::BACKGROUND, LAYER::PLAYER);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER);
-	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::PLAYER);
-	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::PLAYER_DIR_COL);
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::SPINE, LAYER::PLAYER);
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::SPINE, LAYER::PLAYER_DIR_COL);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER_DIR_COL);
 	//GET_SINGLE(ResourceManager)->LoadSound(L"BGM", L"Sound\\Retro_bgm.wav", true);
 	//GET_SINGLE(ResourceManager)->Play(L"BGM");
@@ -54,21 +54,14 @@ void Stage3::Init()
 
 		spines[i]->SetName(L"Die" + std::to_wstring(i));
 
-		AddObject(spines[i], LAYER::PROJECTILE);
+		AddObject(spines[i], LAYER::SPINE);
 	}
 
 	Wall* pGround = new Wall;
-	pGround->SetPos({ SCREEN_WIDTH / 2.f - 450.f, SCREEN_HEIGHT / 2.f + 340.f });
-	pGround->SetSize({ 50.f * Ratio ,5.f * Ratio });
+	pGround->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f + 320.f });
+	pGround->SetSize({ 1280.f , 100.f });
 	pGround->GetComponent<Collider>()->SetSize(pGround->GetSize());
 	pGround->SetName(L"Ground");
-	AddObject(pGround, LAYER::GROUND);
-
-	pGround = new Wall;
-	pGround->SetPos({ SCREEN_WIDTH / 2.f + 550.f, SCREEN_HEIGHT / 2.f + 340.f });
-	pGround->SetSize({ 15.f * Ratio ,5.f * Ratio });
-	pGround->GetComponent<Collider>()->SetSize(pGround->GetSize());
-	pGround->SetName(L"Ground2");
 	AddObject(pGround, LAYER::GROUND);
 
 	pGround = new Wall;
@@ -78,14 +71,6 @@ void Stage3::Init()
 	pGround->SetName(L"Die");
 	AddObject(pGround, LAYER::GROUND);
 
-	pGround = new Wall;
-	pGround->SetPos({ SCREEN_WIDTH / 2.f + 300.f, SCREEN_HEIGHT / 2.f + 340.f });
-	pGround->SetSize({ 5.5f * Ratio ,5.f * Ratio });
-	pGround->SetEnterPos({ SCREEN_WIDTH / 2.f + 300.f, SCREEN_HEIGHT / 2.f + 640.f });
-	pGround->SetMove(true);
-	pGround->GetComponent<Collider>()->SetSize({ 7.f ,7.f });
-	pGround->SetName(L"Trab");
-	AddObject(pGround, LAYER::GROUND);
 
 	Object* pDoor = new Door;
 	pDoor->SetPos({ 1100.f, 600.f });

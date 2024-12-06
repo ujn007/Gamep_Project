@@ -11,7 +11,7 @@ Wall::Wall()
 {
 	m_pTex = GET_SINGLE(ResourceManager)->TextureLoad(L"Wall", L"Texture\\Wall.bmp");
 	this->AddComponent<Collider>();
-	enterMove = false;
+	enterMove = TweenMode::NONE;
 }
 
 Wall::~Wall()
@@ -58,8 +58,20 @@ void Wall::SetCollider(Object* owner, Vec2 scale, Vec2 offset)
 
 void Wall::EnterCollision(Collider* _other)
 {
-	if(enterMove)
+	switch (enterMove)
+	{
+	case TweenMode::NONE:
+		break;
+	case TweenMode::ONCE:
 		GET_SINGLE(DotweenManager)->DoMove(this, GetPos(), enterPos, 1.f);
+		enterMove = TweenMode::NONE;
+		break;
+	case TweenMode::EVERYTIME:
+		GET_SINGLE(DotweenManager)->DoMove(this, GetPos(), enterPos, 1.f);
+		break;
+	default:
+		break;
+	}
 }
 
 void Wall::StayCollision(Collider* _other)

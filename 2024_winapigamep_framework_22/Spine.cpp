@@ -20,6 +20,7 @@ Spine::Spine()
 	this->AddComponent<Collider>();
 	GetComponent<Collider>()->SetOwner(this);
 	GetComponent<Collider>()->SetSize({ 2.f * Ratio, 1.f * Ratio });
+	enterMove = TweenMode::NONE;
 }
 
 Spine::~Spine()
@@ -50,7 +51,26 @@ void Spine::Render(HDC _hdc)
 
 void Spine::EnterCollision(Collider* _other)
 {
-
+	static int hash = 0;
+	switch (enterMove)
+	{
+	case TweenMode::NONE:
+		break;
+	case TweenMode::ONCE:
+		GET_SINGLE(DotweenManager)->DoMove(this, GetPos(), enterPos, 1.f);
+		enterMove = TweenMode::NONE;
+		GetComponent<Collider>()->SetSize(changeColliderSize);
+		SetName(L"Die" + std::to_wstring(hash));
+		hash++;
+		break;
+	case TweenMode::EVERYTIME:
+		GET_SINGLE(DotweenManager)->DoMove(this, GetPos(), enterPos, 1.f);
+		SetName(L"Die" + std::to_wstring(hash));
+		hash++;
+		break;
+	default:
+		break;
+	}
 }
 
 void Spine::StayCollision(Collider* _other)

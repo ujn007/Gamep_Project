@@ -5,11 +5,12 @@ enum class LAYER
 	PLAYER_DIR_COL,
 	BACKGROUND,
 	GROUND,
+	SPINE,
 	DOOR,
-	PLAYER,
-	ENEMY,
-	PROJECTILE,
 	Wall,
+	TRAP,
+	ENEMY,
+	PLAYER,
 	UI,
 	END 
 };
@@ -61,4 +62,11 @@ enum class EVENT_TYPE
 	DELETE_OBJECT,
 	SCENE_CHANGE,
 	END,
+};
+
+enum class TweenMode
+{
+	NONE,
+	ONCE,
+	EVERYTIME
 };

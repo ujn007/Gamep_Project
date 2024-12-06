@@ -36,3 +36,8 @@ void DotweenManager::Update(float deltaTime) {
 void DotweenManager::DoMove(Object* target, Vec2 startPos, Vec2 endPos, float duration) {
     tweens.emplace_back(target, startPos, endPos, duration);
 }
+
+void DotweenManager::Release()
+{
+    tweens.clear();
+}

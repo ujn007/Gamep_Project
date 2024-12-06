@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "EventManager.h"
+#include "SceneManager.h"
 #include "Object.h"
 void EventManager::Update()
 {
@@ -28,6 +29,14 @@ void EventManager::DeleteObject(Object* _pObj)
 	}
 }
 
+void EventManager::LoadScene(wstring name)
+{
+	tEvent* eve = new tEvent();
+	eve->eveType = EVENT_TYPE::SCENE_CHANGE;
+	eve->objName = name;
+	Excute(*eve);
+}
+
 void EventManager::Excute(const tEvent& _eve)
 {
 	switch (_eve.eveType)
@@ -42,6 +51,7 @@ void EventManager::Excute(const tEvent& _eve)
 	case EVENT_TYPE::CREATE_OBJECT:
 		break;
 	case EVENT_TYPE::SCENE_CHANGE:
+		GET_SINGLE(SceneManager)->LoadScene(_eve.objName);
 		break;
 	}
 }

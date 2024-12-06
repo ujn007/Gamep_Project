@@ -22,10 +22,16 @@ public:
 	virtual void EnterCollision(Collider* _other);
 	virtual void StayCollision(Collider* _other);
 	virtual void ExitCollision(Collider* _other);
+	void SetEnterPos(Vec2 pos) { enterPos = pos; }
+	void SetMode(TweenMode value) { enterMove = value; }
+	void SetchangeColliderSize(Vec2 value) { changeColliderSize = value; }
 private:
 	//float m_dir;
 	float m_angle;
 	Vec2 m_vDir;
 	Texture* m_pTex;
+	Vec2 enterPos;
+	Vec2 changeColliderSize;
+	TweenMode enterMove;
 };
 
