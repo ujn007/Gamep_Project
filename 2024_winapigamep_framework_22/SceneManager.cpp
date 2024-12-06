@@ -5,9 +5,12 @@
 #include "Stage2.h"
 #include "Stage3.h"
 #include "Stage4.h"
+#include "Stage5.h"
+#include "Stage6.h"
 #include "GameScene.h"
 #include "MainScene.h"
 #include "DotweenManager.h"
+#include "EventManager.h"
 #include <string>
 #include <sstream>
 
@@ -20,6 +23,8 @@ void SceneManager::Init()
 	RegisterScene(L"Stage2",std::make_shared<Stage2>());
 	RegisterScene(L"Stage3",std::make_shared<Stage3>());
 	RegisterScene(L"Stage4",std::make_shared<Stage4>());
+	RegisterScene(L"Stage5",std::make_shared<Stage5>());
+	RegisterScene(L"Stage6",std::make_shared<Stage6>());
 	RegisterScene(L"GameScene",std::make_shared<GameScene>());
 	RegisterScene(L"MainScene",std::make_shared<MainScene>());
 
@@ -52,7 +57,7 @@ void SceneManager::RegisterScene(const wstring& _sceneName, std::shared_ptr<Scen
 void SceneManager::LoadScene(const wstring& _sceneName)
 {
 	// 씬이 있으면
-	if (m_pCurrentScene != nullptr)               
+	if (m_pCurrentScene != nullptr)
 	{
 		m_pCurrentScene->Release();
 		GET_SINGLE(DotweenManager)->Release();
@@ -70,19 +75,13 @@ void SceneManager::LoadScene(const wstring& _sceneName)
 
 void SceneManager::LoadNextScene()
 {
-	LoadScene(GetNextSceneName(GetCurrentSceneName()));	
-}
-
-void SceneManager::TESTSCENE()
-{
-	m_pCurrentScene->Release();	
-	m_pCurrentScene->Init();	
+	GET_SINGLE(EventManager)->LoadScene(GetNextSceneName(GetCurrentSceneName()));
 }
 
 wstring SceneManager::GetNextSceneName(const wstring& _sceneName)
 {
 	if (!_sceneName.empty()) {
-		// wstring -> string 변환 
+		// wstring -> string 변환
 		std::string str(_sceneName.begin(), _sceneName.end());
 
 		// 마지막 글자가 숫자인지 확인
