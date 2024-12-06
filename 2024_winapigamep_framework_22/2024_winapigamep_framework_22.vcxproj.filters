@@ -171,6 +171,10 @@
     <ClInclude Include="PlayerDirCollider.h">
       <Filter>Engine\03. Object</Filter>
     </ClInclude>
+    <ClInclude Include="Stage3.h" />
+    <ClInclude Include="Stage4.h" />
+    <ClInclude Include="Stage5.h" />
+    <ClInclude Include="Stage6.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2024_winapigamep_framework_22.rc">
@@ -290,6 +294,10 @@
     <ClCompile Include="PlayerDirCollider.cpp">
       <Filter>Engine\03. Object</Filter>
     </ClCompile>
+    <ClCompile Include="Stage3.cpp" />
+    <ClCompile Include="Stage4.cpp" />
+    <ClCompile Include="Stage5.cpp" />
+    <ClCompile Include="Stage6.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

@@ -53,7 +53,7 @@ void Stage4::Init()
 		spines[i]->GetComponent<Collider>()->SetSize({ 4.f * Ratio, 2.f * Ratio });
 		spines[i]->SetchangeColliderSize({ 2.f * Ratio, 1.f * Ratio });
 		spines[i]->SetMode(TweenMode::ONCE);
-		spines[i]->SetEnterPos(spinePos[i] + Vec2(100.f, 0.f));
+		spines[i]->SetEnterPos(spinePos[i] + Vec2(60.f, 0.f));
 		spines[i]->GetComponent<Collider>()->SetOwner(spines[i]);
 
 		spines[i]->SetName(L"ss" + std::to_wstring(i));
