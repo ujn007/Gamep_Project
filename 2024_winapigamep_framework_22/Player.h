@@ -25,10 +25,12 @@ private:
 	Texture* m_pTex;
 	ANIM currentAnim;
 	COLDIR currentCol;
+	bool isDie;
 	bool isJump;
 	bool isGround;
 	bool isFacingRight;
 	bool isLeftCollision;
 	bool isRightCollision;
+	float m_curTime;
 };
 

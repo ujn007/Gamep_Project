@@ -24,7 +24,9 @@ enum class ANIM
 	JUMP_RIGHT,
 	JUMP_LEFT,
 	FALL_RIGHT,
-	FALL_LEFT
+	FALL_LEFT,
+	DIE_LEFT,
+	DIE_RIGHT
 };
 
 enum class DIR

@@ -16,6 +16,8 @@
 #include <string>
 #include <locale>
 #include <cstdlib>
+#include <thread>
+#include <chrono>
 
 
 Player::Player()
@@ -26,6 +28,8 @@ Player::Player()
 	, currentCol(COLDIR::DOWN)
 	, isLeftCollision(false)
 	, isRightCollision(false)
+	, isDie(false)
+	, m_curTime(0.f)
 {
 	m_pTex = GET_SINGLE(ResourceManager)->TextureLoad(L"PlayerAnim", L"Texture\\PlayerAnim.bmp");
 	this->AddComponent<Collider>();
@@ -51,7 +55,7 @@ Player::Player()
 
 	PlayerDirCollider* m_pDirBottomCol = new PlayerDirCollider;
 	m_pDirBottomCol->SetOwner(this);
-	m_pDirBottomCol->SetCollider(DIR::BOTTOM, { 20.f, 1.f }, { 0.f, 18.f }); 
+	m_pDirBottomCol->SetCollider(DIR::BOTTOM, { 20.f, 1.f }, { 0.f, 18.f });
 
 	GET_SINGLE(SceneManager)->GetCurrentScene()->AddObject(m_pDirLeftCol, LAYER::PLAYER_DIR_COL);
 	GET_SINGLE(SceneManager)->GetCurrentScene()->AddObject(m_pDirRightCol, LAYER::PLAYER_DIR_COL);
@@ -78,6 +82,10 @@ Player::Player()
 		Vec2(size, size), Vec2(size, 0.f), 1, 1);
 	GetComponent<Animator>()->CreateAnimation(L"Player_fall_Left", m_pTex, Vec2(leftFlip + (size * 4), size * 5),
 		Vec2(size, size), Vec2(size, 0.f), 1, 1);
+	GetComponent<Animator>()->CreateAnimation(L"Player_die_Left", m_pTex, Vec2(0.f, size * 6),
+		Vec2(size, size), Vec2(size, 0.f), 5, 0.1f);
+	GetComponent<Animator>()->CreateAnimation(L"Player_die_Right", m_pTex, Vec2(leftFlip, size * 6),
+		Vec2(size, size), Vec2(size, 0.f), 5, 0.1f);
 	GetComponent<Animator>()->PlayAnimation(L"Player_Idle_Right", true);
 #pragma endregion
 
@@ -91,12 +99,22 @@ Player::~Player()
 }
 void Player::Update()
 {
-	HandleMovement(); 
+	if (isDie)
+	{
+		m_curTime += fDT;
+		if (m_curTime >= 1.f)
+		{
+			GET_SINGLE(EventManager)->LoadScene(GET_SINGLE(SceneManager)->GetCurrentSceneName());
+		}
+	}
+
+	HandleMovement();
 	HandleAnimation();
 }
 
 void Player::HandleMovement()
 {
+	if (isDie) return;
 	Vec2 velocity = rigid->GetVelocity();
 
 	if (GET_KEY(KEY_TYPE::A) && 0 + 10 < GetPos().x && !isLeftCollision) {
@@ -126,7 +144,10 @@ void Player::HandleAnimation()
 {
 	ANIM targetAnim = ANIM::IDLE_RIGHT;
 
-	if (!isGround) {
+	if (isDie) {
+		targetAnim = isFacingRight ? ANIM::DIE_LEFT : ANIM::DIE_RIGHT;
+	}
+	else if (!isGround) {
 		if (rigid->GetVelocity().y <= 0) {
 			targetAnim = isFacingRight ? ANIM::JUMP_RIGHT : ANIM::JUMP_LEFT;
 		}
@@ -135,14 +156,15 @@ void Player::HandleAnimation()
 		}
 	}
 	else if (rigid->GetVelocity().x < 0 && !rigid->IsStopMoveLeft()) {
-		targetAnim = ANIM::RUN_LEFT;	
+		targetAnim = ANIM::RUN_LEFT;
 	}
 	else if (rigid->GetVelocity().x > 0 && !rigid->IsStopMoveRight()) {
-		targetAnim = ANIM::RUN_RIGHT;	
+		targetAnim = ANIM::RUN_RIGHT;
 	}
 	else {
 		targetAnim = isFacingRight ? ANIM::IDLE_RIGHT : ANIM::IDLE_LEFT;
 	}
+
 	if (currentAnim != targetAnim) {
 		currentAnim = targetAnim;
 
@@ -171,6 +193,12 @@ void Player::HandleAnimation()
 		case ANIM::FALL_RIGHT:
 			GetComponent<Animator>()->PlayAnimation(L"Player_fall_Right", false);
 			break;
+		case ANIM::DIE_LEFT:
+			GetComponent<Animator>()->PlayAnimation(L"Player_die_Left", false);
+			break;
+		case  ANIM::DIE_RIGHT:
+			GetComponent<Animator>()->PlayAnimation(L"Player_die_Right", false);
+			break;
 		}
 	}
 }
@@ -191,12 +219,8 @@ void Player::EnterCollision(Collider* _other)
 	std::wcout << obj->GetName();
 
 	if (obj->GetName().find(L"Die") != wstring::npos) {
-		/*isFacingRight ? GetComponent<Animator>()->PlayAnimation(L"Player_die_Left", true)
-			: GetComponent<Animator>()->PlayAnimation(L"Player_die_Right", true);
-
-		Sleep(500);*/
-
-		GET_SINGLE(EventManager)->LoadScene(GET_SINGLE(SceneManager)->GetCurrentSceneName());	
+		isDie = true;
+		rigid->UseGravity(false);
 	}
 	else if (obj->GetName() == L"Door") {
 		GET_SINGLE(SceneManager)->LoadNextScene();

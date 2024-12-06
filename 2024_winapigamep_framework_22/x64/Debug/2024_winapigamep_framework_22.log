@@ -1,5 +1,5 @@
-﻿  Stage2.cpp
-C:\Users\user\Documents\GitHub\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-  (소스 파일 'Stage2.cpp'을(를) 컴파일하는 중)
+﻿  Player.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Player.cpp'을(를) 컴파일하는 중)
   
-  2024_winapigamep_framework_22.vcxproj -> C:\Users\user\Documents\GitHub\Gamep_Project\Output\build_debug\2024_winapigamep_framework_22.exe
+  2024_winapigamep_framework_22.vcxproj -> D:\UnityProject\Gamep_Project\Output\build_debug\2024_winapigamep_framework_22.exe
