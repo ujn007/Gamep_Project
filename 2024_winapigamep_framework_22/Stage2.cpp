@@ -72,7 +72,7 @@ void Stage2::Init()
 	AddObject(pGround, LAYER::GROUND);
 
 	pGround = new Wall;
-	pGround->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f + 380.f });
+	pGround->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f + 540.f });
 	pGround->SetSize({ 100.f * Ratio ,5.f * Ratio });
 	pGround->GetComponent<Collider>()->SetSize(pGround->GetSize());
 	pGround->SetName(L"Die");

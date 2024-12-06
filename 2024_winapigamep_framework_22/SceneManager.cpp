@@ -10,6 +10,7 @@
 #include "GameScene.h"
 #include "MainScene.h"
 #include "DotweenManager.h"
+#include "EventManager.h"
 #include <string>
 #include <sstream>
 
@@ -74,7 +75,7 @@ void SceneManager::LoadScene(const wstring& _sceneName)
 
 void SceneManager::LoadNextScene()
 {
-	LoadScene(GetNextSceneName(GetCurrentSceneName()));
+	GET_SINGLE(EventManager)->LoadScene(GetNextSceneName(GetCurrentSceneName()));
 }
 
 wstring SceneManager::GetNextSceneName(const wstring& _sceneName)

@@ -88,7 +88,7 @@ void Stage6::Init()
 	pGround->SetSize({ 100.f * Ratio ,5.f * Ratio });
 	pGround->GetComponent<Collider>()->SetSize(pGround->GetSize());
 	pGround->SetName(L"Die");
-	AddObject(pGround, LAYER::GROUND);
+	AddObject(pGround, LAYER::SPINE);
 
 
 	Object* pDoor = new Door;
