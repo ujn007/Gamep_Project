@@ -26,9 +26,6 @@
     <Filter Include="Engine\04. Scene">
       <UniqueIdentifier>{e854d33c-3cbc-4c1a-824d-e6d42d811345}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\05. Resource">
-      <UniqueIdentifier>{bbf36fb7-a875-47da-87a2-b1fe97c0a065}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\06. Component">
       <UniqueIdentifier>{2f9dcc2e-ceae-4161-85f0-f652cfcdd506}</UniqueIdentifier>
     </Filter>
@@ -43,6 +40,12 @@
     </Filter>
     <Filter Include="Engine\06. Component\RigidBody">
       <UniqueIdentifier>{a8b2d107-8397-47cc-9cf4-9abdaeff79bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04. Scene\Stage">
+      <UniqueIdentifier>{75361155-4063-40a4-982c-86c250e3f8f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05. Resource">
+      <UniqueIdentifier>{bbf36fb7-a875-47da-87a2-b1fe97c0a065}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -86,9 +89,6 @@
       <Filter>Engine\99. Header</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
-      <Filter>Engine\04. Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage1.h">
       <Filter>Engine\04. Scene</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h">
@@ -166,10 +166,18 @@
     <ClInclude Include="Door.h">
       <Filter>Engine\03. Object</Filter>
     </ClInclude>
-    <ClInclude Include="Stage2.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="PlayerDirCollider.h">
       <Filter>Engine\03. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage3.h">
+      <Filter>Engine\04. Scene\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1.h">
+      <Filter>Engine\04. Scene\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage2.h">
+      <Filter>Engine\04. Scene\Stage</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -205,9 +213,6 @@
       <Filter>Engine\03. Object</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
-      <Filter>Engine\04. Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage1.cpp">
       <Filter>Engine\04. Scene</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
@@ -285,10 +290,18 @@
     <ClCompile Include="Wall.cpp">
       <Filter>Engine\03. Object</Filter>
     </ClCompile>
-    <ClCompile Include="Stage2.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="PlayerDirCollider.cpp">
       <Filter>Engine\03. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage1.cpp">
+      <Filter>Engine\04. Scene\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage2.cpp">
+      <Filter>Engine\04. Scene\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage3.cpp">
+      <Filter>Engine\04. Scene\Stage</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

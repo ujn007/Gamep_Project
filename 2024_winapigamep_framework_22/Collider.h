@@ -23,7 +23,6 @@ public:
 	{
 		return m_vLatePos;
 	}
-	Collider* GetCollider() const { return m_pCollider; }
 private:
 	bool m_showDebug = false;
 	UINT m_ID; // 충돌체 고유 ID값
@@ -34,6 +33,5 @@ private:
 	Vec2 m_vOffsetPos;
 	// LateUpdate에서 매 프레임마다 오브젝트로부터 계산되는 위치
 	Vec2 m_vLatePos;
-	Collider* m_pCollider;
 };
 

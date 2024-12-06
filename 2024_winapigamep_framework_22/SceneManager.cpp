@@ -49,7 +49,7 @@ void SceneManager::RegisterScene(const wstring& _sceneName, std::shared_ptr<Scen
 void SceneManager::LoadScene(const wstring& _sceneName)
 {
 	// 씬이 있으면
-	if (m_pCurrentScene != nullptr)
+	if (m_pCurrentScene != nullptr)               
 	{
 		m_pCurrentScene->Release();
 		m_currentSceneName = _sceneName;
@@ -66,13 +66,19 @@ void SceneManager::LoadScene(const wstring& _sceneName)
 
 void SceneManager::LoadNextScene()
 {
-	LoadScene(GetNextSceneName(GetCurrentSceneName()));
+	LoadScene(GetNextSceneName(GetCurrentSceneName()));	
+}
+
+void SceneManager::TESTSCENE()
+{
+	m_pCurrentScene->Release();	
+	m_pCurrentScene->Init();	
 }
 
 wstring SceneManager::GetNextSceneName(const wstring& _sceneName)
 {
 	if (!_sceneName.empty()) {
-		// wstring -> string 변환
+		// wstring -> string 변환 
 		std::string str(_sceneName.begin(), _sceneName.end());
 
 		// 마지막 글자가 숫자인지 확인

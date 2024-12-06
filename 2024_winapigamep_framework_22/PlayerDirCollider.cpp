@@ -72,7 +72,6 @@ void PlayerDirCollider::SetCollider(DIR state, Vec2 scale, Vec2 offset)
 void PlayerDirCollider::BlockCheck(Object* obj)
 {
 	Vec2 velo = m_pOwner->GetRigid()->GetVelocity();
-	cout << velo.y << endl;
 
 	switch (m_eState)
 	{
