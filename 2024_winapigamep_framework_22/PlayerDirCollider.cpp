@@ -22,8 +22,9 @@ void PlayerDirCollider::Update()
 {
 	if (m_pOwner == nullptr)
 		return;
-
-	SetPos(m_pOwner->GetPos()); // 플레이어 위치로 이동
+	
+	if(!m_pOwner->IsDie())
+	SetPos(m_pOwner->GetPos());
 }
 
 void PlayerDirCollider::Render(HDC _hdc)
@@ -38,11 +39,6 @@ void PlayerDirCollider::EnterCollision(Collider* _pOther)
 	// Block
 	if (objName == L"Ground")
 		BlockCheck(pOtherObj);
-
-	if (m_eState == DIR::BOTTOM && objName == L"DamageObject")
-	{
-		//m_pOwner->Die();
-	}
 }
 
 void PlayerDirCollider::ExitCollision(Collider* _pOther)
@@ -72,7 +68,6 @@ void PlayerDirCollider::SetCollider(DIR state, Vec2 scale, Vec2 offset)
 void PlayerDirCollider::BlockCheck(Object* obj)
 {
 	Vec2 velo = m_pOwner->GetRigid()->GetVelocity();
-	cout << velo.y << endl;
 
 	switch (m_eState)
 	{

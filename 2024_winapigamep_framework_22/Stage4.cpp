@@ -25,8 +25,10 @@ void Stage4::Init()
 	pPlayer->GetComponent<Collider>()->SetOwner(pPlayer);
 	AddObject(pPlayer, LAYER::PLAYER);
 
-	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER);
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER);	
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::ENEMY, LAYER::PLAYER);	
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::SPINE, LAYER::PLAYER);
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::DOOR, LAYER::PLAYER);	
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::SPINE, LAYER::PLAYER_DIR_COL);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER_DIR_COL);
 
@@ -38,7 +40,7 @@ void Stage4::Init()
 	GET_SINGLE(TimeManager)->GetDT();
 
 	vector<Vec2> spinePos;
-	spinePos.push_back({ 600.f, SCREEN_HEIGHT / 2.f + 265.f });
+	spinePos.push_back({ 800.f, SCREEN_HEIGHT / 2.f + 265.f });
 	spinePos.push_back({ 400.f, SCREEN_HEIGHT / 2.f + 265.f });
 
 	vector<Spine*> spines;
@@ -49,7 +51,7 @@ void Stage4::Init()
 		spines[i]->GetComponent<Collider>()->SetSize({ 4.f * Ratio, 2.f * Ratio });
 		spines[i]->SetchangeColliderSize({ 2.f * Ratio, 1.f * Ratio });
 		spines[i]->SetMode(TweenMode::ONCE);
-		spines[i]->SetEnterPos(spinePos[i] + Vec2(60.f, 0.f));
+		i == 1 ? spines[i]->SetEnterPos(spinePos[i] + Vec2(60.f, 0.f)) : spines[i]->SetEnterPos(spinePos[i] + Vec2(-60.f, 0.f));
 		spines[i]->GetComponent<Collider>()->SetOwner(spines[i]);
 
 		spines[i]->SetName(L"ss" + std::to_wstring(i));
@@ -69,14 +71,13 @@ void Stage4::Init()
 	pGround->SetSize({ 100.f * Ratio ,5.f * Ratio });
 	pGround->GetComponent<Collider>()->SetSize(pGround->GetSize());
 	pGround->SetName(L"Die");
-	AddObject(pGround, LAYER::GROUND);
-
+	AddObject(pGround, LAYER::SPINE);	
 
 	Object* pDoor = new Door;
 	pDoor->SetPos({ 1100.f, 600.f });
 	pDoor->SetSize({ Ratio, Ratio });
 	pDoor->SetName(L"Door");
-	AddObject(pDoor, LAYER::GROUND);
+	AddObject(pDoor, LAYER::DOOR);
 }
 
 void Stage4::Update()

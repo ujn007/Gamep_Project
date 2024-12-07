@@ -19,7 +19,7 @@
 void Stage6::Init()
 {
 	Object* pPlayer = new Player;
-	pPlayer->SetPos({ 100.f,620.f });
+	pPlayer->SetPos({ 100.f,500.f });
 	pPlayer->SetSize({ 30.f,30.f });
 	pPlayer->SetName(L"Player");
 	pPlayer->GetComponent<Collider>()->SetOwner(pPlayer);
@@ -45,18 +45,18 @@ void Stage6::Init()
 	GET_SINGLE(TimeManager)->GetDT();
 
 	vector<Vec2> spinePos;
-	spinePos.push_back({ 600.f, SCREEN_HEIGHT / 2.f + 315.f });
+	spinePos.push_back({ 200.f, SCREEN_HEIGHT / 2.f + 315.f });
 	spinePos.push_back({ 400.f, SCREEN_HEIGHT / 2.f + 315.f });
+	spinePos.push_back({ 600.f, SCREEN_HEIGHT / 2.f + 315.f });
 	spinePos.push_back({ 800.f, SCREEN_HEIGHT / 2.f + 315.f });
 	spinePos.push_back({ 1000.f, SCREEN_HEIGHT / 2.f + 315.f });
-	spinePos.push_back({ 1200.f, SCREEN_HEIGHT / 2.f + 315.f });
 
 	vector<Spine*> spines;
 	for (int i = 0; i < spinePos.size() - 1; i++) {
 		spines.push_back(new Spine);
 		spines[i]->SetPos(spinePos[i]);
 		spines[i]->SetSize({ Ratio * 0.15f ,Ratio * 0.15f });
-		spines[i]->GetComponent<Collider>()->SetSize({ 4.f * Ratio, 6.f * Ratio });
+		spines[i]->GetComponent<Collider>()->SetSize({ 4.f * Ratio, 10.f * Ratio });
 		spines[i]->SetchangeColliderSize({ 2.f * Ratio, 1.f * Ratio });
 		spines[i]->SetMode(TweenMode::ONCE);
 		spines[i]->SetEnterPos(spinePos[i] - Vec2(0.f, 50.f));
@@ -68,7 +68,7 @@ void Stage6::Init()
 	}
 
 	Wall* pGround = new Wall;
-	pGround->SetPos({ SCREEN_WIDTH / 2.f - 260.f, SCREEN_HEIGHT / 2.f + 320.f });
+	pGround->SetPos({ SCREEN_WIDTH / 2.f - 350.f, SCREEN_HEIGHT / 2.f + 320.f });
 	pGround->SetSize({ 1280.f , 100.f });
 	pGround->GetComponent<Collider>()->SetSize(pGround->GetSize());
 	pGround->SetName(L"Ground");
@@ -76,10 +76,10 @@ void Stage6::Init()
 
 	pGround = new Wall;
 	pGround->SetPos({ SCREEN_WIDTH / 2.f + 510.f, SCREEN_HEIGHT / 2.f + 320.f });
-	pGround->SetSize({ 10.f * Ratio , 100.f });
+	pGround->SetSize({ 17.f * Ratio , 100.f });
 	pGround->SetEnterPos({ SCREEN_WIDTH / 2.f + 500.f, SCREEN_HEIGHT / 2.f + 640.f });
 	pGround->SetMode(TweenMode::ONCE);
-	pGround->GetComponent<Collider>()->SetSize({ 10.f * Ratio , 400.f });
+	pGround->GetComponent<Collider>()->SetSize({ 17.f * Ratio , 400.f });
 	pGround->SetName(L"Trab");
 	AddObject(pGround, LAYER::TRAP);
 
@@ -90,12 +90,11 @@ void Stage6::Init()
 	pGround->SetName(L"Die");
 	AddObject(pGround, LAYER::SPINE);
 
-
 	Object* pDoor = new Door;
 	pDoor->SetPos({ 1100.f, 600.f });
 	pDoor->SetSize({ Ratio, Ratio });
 	pDoor->SetName(L"Door");
-	AddObject(pDoor, LAYER::GROUND);
+	AddObject(pDoor, LAYER::DOOR);
 }
 
 void Stage6::Update()

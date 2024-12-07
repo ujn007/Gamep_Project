@@ -32,8 +32,8 @@ public:
 	void AddComponent()
 	{
 		T* com = new T;
-		com->SetOwner(this);
-		m_vecComponents.push_back(com);
+		com->SetOwner(this);	
+		m_vecComponents.push_back(com);	
 	}
 	template<typename T>
 	T* GetComponent()

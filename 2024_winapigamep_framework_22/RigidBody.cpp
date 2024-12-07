@@ -6,10 +6,18 @@
 
 RigidBody::RigidBody()
 	:m_fMass(1.f)
+	, m_vForce(Vec2(0.f, 0.f))
+	, m_vAccel(Vec2(0.f, 0.f))
+	, m_vVelocity(Vec2(0.f, 0.f))
 	, m_fFricCoeff(200.f)
 	, m_fMaxSpeed(100.f)
 	, m_gravity(980 + 590.f)
+	, m_stopMove(false)
+	, useGravity(true)
+	, m_isStopMoveLeft(false)
+	, m_isStopMoveRight(false)
 {
+	cout << "Init_Rigid=========================================================" << endl;
 }
 
 RigidBody::~RigidBody()
@@ -94,6 +102,7 @@ void RigidBody::Move()
 		vPos.y += m_vVelocity.y * fDT;
 	}
 
+	if(!m_stopMove)
 	GetOwner()->SetPos(vPos);
 }
 

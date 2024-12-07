@@ -23,6 +23,4 @@ private:
 	DIR m_eState;
 	Player* m_pOwner;
 	RigidBody* rigid;
-
-	// Object을(를) 통해 상속됨
 };

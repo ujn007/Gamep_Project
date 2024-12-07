@@ -2,7 +2,6 @@
 enum class LAYER
 {
 	DEFAULT,
-	PLAYER_DIR_COL,
 	BACKGROUND,
 	TRAP,
 	GROUND,
@@ -10,6 +9,8 @@ enum class LAYER
 	DOOR,
 	Wall,
 	ENEMY,
+	TELEPORT,
+	PLAYER_DIR_COL,
 	PLAYER,
 	UI,
 	END 
@@ -24,7 +25,9 @@ enum class ANIM
 	JUMP_RIGHT,
 	JUMP_LEFT,
 	FALL_RIGHT,
-	FALL_LEFT
+	FALL_LEFT,
+	DIE_LEFT,
+	DIE_RIGHT
 };
 
 enum class DIR

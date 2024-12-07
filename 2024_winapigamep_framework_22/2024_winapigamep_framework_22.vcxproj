@@ -206,8 +206,9 @@
     <ClInclude Include="Stage7.h" />
     <ClInclude Include="Stage8.h" />
     <ClInclude Include="Stage9.h" />
-    <ClInclude Include="Btn.h" />
+    <ClInclude Include="StartBtn.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Teleport.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="TestGround.h" />
     <ClInclude Include="Texture.h" />
@@ -255,7 +256,8 @@
     <ClCompile Include="Stage7.cpp" />
     <ClCompile Include="Stage8.cpp" />
     <ClCompile Include="Stage9.cpp" />
-    <ClCompile Include="Btn.cpp" />
+    <ClCompile Include="StartBtn.cpp" />
+    <ClCompile Include="Teleport.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="TestGround.cpp" />
     <ClCompile Include="Texture.cpp" />

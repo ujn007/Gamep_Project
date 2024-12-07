@@ -27,10 +27,11 @@ void Stage3::Init()
 
 	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::ENEMY);
 	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::BACKGROUND, LAYER::PLAYER);
-	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::SPINE, LAYER::PLAYER);
-	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::SPINE, LAYER::PLAYER_DIR_COL);
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::ENEMY, LAYER::PLAYER);
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::DOOR, LAYER::PLAYER);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER_DIR_COL);
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::ENEMY, LAYER::PLAYER_DIR_COL);
 	//GET_SINGLE(ResourceManager)->LoadSound(L"BGM", L"Sound\\Retro_bgm.wav", true);
 	//GET_SINGLE(ResourceManager)->Play(L"BGM");
 
@@ -64,19 +65,18 @@ void Stage3::Init()
 	pGround->SetName(L"Ground");
 	AddObject(pGround, LAYER::GROUND);
 
-	pGround = new Wall;
-	pGround->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f + 540.f });
-	pGround->SetSize({ 100.f * Ratio ,5.f * Ratio });
-	pGround->GetComponent<Collider>()->SetSize(pGround->GetSize());
-	pGround->SetName(L"Die");
-	AddObject(pGround, LAYER::GROUND);
-
+	 Wall* pFall = new Wall;
+	 pFall->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f + 540.f });	
+	 pFall->SetSize({ 100.f * Ratio ,5.f * Ratio });	
+	 pFall->GetComponent<Collider>()->SetSize(pFall->GetSize());	
+	 pFall->SetName(L"Die");	
+	AddObject(pFall, LAYER::SPINE);	
 
 	Object* pDoor = new Door;
 	pDoor->SetPos({ 1100.f, 600.f });
 	pDoor->SetSize({ Ratio, Ratio });
 	pDoor->SetName(L"Door");
-	AddObject(pDoor, LAYER::GROUND);
+	AddObject(pDoor, LAYER::DOOR);
 }
 
 void Stage3::Update()

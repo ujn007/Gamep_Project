@@ -27,6 +27,7 @@ void Stage5::Init()
 
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::SPINE, LAYER::PLAYER);
+	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::DOOR, LAYER::PLAYER);	
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::SPINE, LAYER::PLAYER_DIR_COL);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER_DIR_COL);
 
@@ -89,7 +90,7 @@ void Stage5::Init()
 	pDoor->SetPos({ 1100.f, 600.f });
 	pDoor->SetSize({ Ratio, Ratio });
 	pDoor->SetName(L"Door");
-	AddObject(pDoor, LAYER::GROUND);
+	AddObject(pDoor, LAYER::DOOR);
 }
 
 void Stage5::Update()
