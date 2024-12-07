@@ -22,8 +22,9 @@ void PlayerDirCollider::Update()
 {
 	if (m_pOwner == nullptr)
 		return;
-
-	SetPos(m_pOwner->GetPos()); // 플레이어 위치로 이동
+	
+	if(!m_pOwner->IsDie())
+	SetPos(m_pOwner->GetPos());
 }
 
 void PlayerDirCollider::Render(HDC _hdc)

@@ -1,5 +1,268 @@
-﻿  Player.cpp
+﻿  Animation.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Animation.cpp'을(를) 컴파일하는 중)
+  
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Animation.cpp(23,38): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Animation.cpp(70,57): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Animator.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Animator.cpp'을(를) 컴파일하는 중)
+  
+  Background.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Background.cpp'을(를) 컴파일하는 중)
+  
+  BaseWindow.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'BaseWindow.cpp'을(를) 컴파일하는 중)
+  
+  Collider.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Collider.cpp'을(를) 컴파일하는 중)
+  
+  CollisionManager.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'CollisionManager.cpp'을(를) 컴파일하는 중)
+  
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\CollisionManager.cpp(135,16): warning C4838: 'float'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\CollisionManager.cpp(135,16): warning C4244: '초기화 중': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\CollisionManager.cpp(136,17): warning C4838: 'float'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\CollisionManager.cpp(136,17): warning C4244: '초기화 중': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Component.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Component.cpp'을(를) 컴파일하는 중)
+  
+  Core.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Core.cpp'을(를) 컴파일하는 중)
+  
+  Door.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Door.cpp'을(를) 컴파일하는 중)
+  
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Door.cpp(38,29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Door.cpp(38,11): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  DotweenManager.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'DotweenManager.cpp'을(를) 컴파일하는 중)
+  
+  Enemy.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Enemy.cpp'을(를) 컴파일하는 중)
+  
+  EventManager.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'EventManager.cpp'을(를) 컴파일하는 중)
+  
+  GDISelector.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'GDISelector.cpp'을(를) 컴파일하는 중)
+  
+  GameScene.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'GameScene.cpp'을(를) 컴파일하는 중)
+  
+  InputManager.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'InputManager.cpp'을(를) 컴파일하는 중)
+  
+  MainBG.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'MainBG.cpp'을(를) 컴파일하는 중)
+  
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\MainBG.cpp(38,29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\MainBG.cpp(38,11): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  MainScene.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'MainScene.cpp'을(를) 컴파일하는 중)
+  
+  Object.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Object.cpp'을(를) 컴파일하는 중)
+  
+  Player.cpp
 D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
   (소스 파일 'Player.cpp'을(를) 컴파일하는 중)
+  
+  PlayerDirCollider.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'PlayerDirCollider.cpp'을(를) 컴파일하는 중)
+  
+  Quit.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Quit.cpp'을(를) 컴파일하는 중)
+  
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Quit.cpp(41,29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Quit.cpp(41,11): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  ResourceBase.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'ResourceBase.cpp'을(를) 컴파일하는 중)
+  
+  ResourceManager.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'ResourceManager.cpp'을(를) 컴파일하는 중)
+  
+D:\VisualStudioDown\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(4709,18): warning C4244: '=': 'wchar_t'에서 'char'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 'ResourceManager.cpp'을(를) 컴파일하는 중)
+      D:\VisualStudioDown\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(4709,18):
+      템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
+          D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\ResourceManager.cpp(76,6):
+          컴파일되는 함수 템플릿 인스턴스화 'std::basic_string<char,std::char_traits<char>,std::allocator<char>> &std::basic_string<char,std::char_traits<char>,std::allocator<char>>::assign<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(const _Iter,const _Iter)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Elem=wchar_t,
+              _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>
+          ]
+              D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\ResourceManager.cpp(76,12):
+              'ResourceManager::LoadSound'에서 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::assign'에 대한 첫 번째 참조를 확인하세요.
+          D:\VisualStudioDown\2022\Community\VC\Tools\MSVC\14.42.34433\include\xstring(1656,32):
+          컴파일되는 함수 템플릿 인스턴스화 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<wchar_t*,0>(_Iter,_Iter,const _Alloc &)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Iter=wchar_t *,
+              _Alloc=std::allocator<char>
+          ]
+          D:\VisualStudioDown\2022\Community\VC\Tools\MSVC\14.42.34433\include\xstring(793,17):
+          컴파일되는 함수 템플릿 인스턴스화 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct_from_iter<wchar_t*,wchar_t*,_Size_type>(_Iter,const _Sent,_Size)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Size_type=unsigned __int64,
+              _Iter=wchar_t *,
+              _Sent=wchar_t *,
+              _Size=unsigned __int64
+          ]
+          D:\VisualStudioDown\2022\Community\VC\Tools\MSVC\14.42.34433\include\xstring(949,18):
+          컴파일되는 함수 템플릿 인스턴스화 '_OutIt *std::_Copy_n_unchecked4<wchar_t*,_Size,char*>(_InIt,_SizeTy,_OutIt)'에 대한 참조를 확인하세요.
+          with
+          [
+              _OutIt=char *,
+              _Size=unsigned __int64,
+              _InIt=wchar_t *,
+              _SizeTy=unsigned __int64
+          ]
+  
+  RigidBody.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'RigidBody.cpp'을(를) 컴파일하는 중)
+  
+  Scene.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Scene.cpp'을(를) 컴파일하는 중)
+  
+  SceneManager.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'SceneManager.cpp'을(를) 컴파일하는 중)
+  
+D:\VisualStudioDown\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(4709,18): warning C4244: '=': 'const wchar_t'에서 'char'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 'SceneManager.cpp'을(를) 컴파일하는 중)
+      D:\VisualStudioDown\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(4709,18):
+      템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
+          D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\SceneManager.cpp(87,18):
+          컴파일되는 함수 템플릿 인스턴스화 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_const_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Elem=wchar_t,
+              _Iter=std::_String_const_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+              _Alloc=std::allocator<char>
+          ]
+              D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\SceneManager.cpp(87,18):
+              'SceneManager::GetNextSceneName'에서 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string'에 대한 첫 번째 참조를 확인하세요.
+          D:\VisualStudioDown\2022\Community\VC\Tools\MSVC\14.42.34433\include\xstring(793,17):
+          컴파일되는 함수 템플릿 인스턴스화 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct_from_iter<const wchar_t*,const wchar_t*,_Size_type>(_Iter,const _Sent,_Size)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Size_type=unsigned __int64,
+              _Iter=const wchar_t *,
+              _Sent=const wchar_t *,
+              _Size=unsigned __int64
+          ]
+          D:\VisualStudioDown\2022\Community\VC\Tools\MSVC\14.42.34433\include\xstring(949,18):
+          컴파일되는 함수 템플릿 인스턴스화 '_OutIt *std::_Copy_n_unchecked4<const wchar_t*,_Size,char*>(_InIt,_SizeTy,_OutIt)'에 대한 참조를 확인하세요.
+          with
+          [
+              _OutIt=char *,
+              _Size=unsigned __int64,
+              _InIt=const wchar_t *,
+              _SizeTy=unsigned __int64
+          ]
+  
+  Spine.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Spine.cpp'을(를) 컴파일하는 중)
+  
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Spine.cpp(46,29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Spine.cpp(46,11): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Stage1.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Stage1.cpp'을(를) 컴파일하는 중)
+  
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Test.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Stage1.cpp'을(를) 컴파일하는 중)
+  
+  Stage2.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Stage2.cpp'을(를) 컴파일하는 중)
+  
+  Stage3.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Stage3.cpp'을(를) 컴파일하는 중)
+  
+  Stage4.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Stage4.cpp'을(를) 컴파일하는 중)
+  
+  Stage5.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Stage5.cpp'을(를) 컴파일하는 중)
+  
+  Stage6.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Stage6.cpp'을(를) 컴파일하는 중)
+  
+  Stage7.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Stage7.cpp'을(를) 컴파일하는 중)
+  
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Test.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Stage7.cpp'을(를) 컴파일하는 중)
+  
+  StartBtn.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'StartBtn.cpp'을(를) 컴파일하는 중)
+  
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\StartBtn.cpp(42,29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\StartBtn.cpp(42,11): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Test.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Test.cpp'을(를) 컴파일하는 중)
+  
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Test.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Test.cpp'을(를) 컴파일하는 중)
+  
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Test.cpp(29,15): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Test.cpp(29,7): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  TestGround.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'TestGround.cpp'을(를) 컴파일하는 중)
+  
+  Texture.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Texture.cpp'을(를) 컴파일하는 중)
+  
+  TimeManager.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'TimeManager.cpp'을(를) 컴파일하는 중)
+  
+  Wall.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'Wall.cpp'을(를) 컴파일하는 중)
+  
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Wall.cpp(47,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Wall.cpp(47,10): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Wall.cpp(46,12): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\Wall.cpp(45,12): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  main.cpp
+D:\UnityProject\Gamep_Project\2024_winapigamep_framework_22\pch.h(44,1): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
   
   2024_winapigamep_framework_22.vcxproj -> D:\UnityProject\Gamep_Project\Output\build_debug\2024_winapigamep_framework_22.exe

@@ -25,7 +25,7 @@ public:
     void AddForce(Vec2 _vf) { m_vForce += _vf; }
     void SetMass(float _fMass) { m_fMass = _fMass; }
     float  GetMass() { return m_fMass; }
-    Vec2 GetVelocity() { return m_vVelocity; }  
+    const Vec2& GetVelocity() { return m_vVelocity; }  
 
     void SetVelocity(Vec2 _v) { m_vVelocity = _v; } 
     void AddVelocity(Vec2 _v) { m_vVelocity += _v; } 
@@ -35,6 +35,7 @@ public:
 
     void StopMoveLeft(bool v) { m_isStopMoveLeft = v; }
     void StopMoveRight(bool v) { m_isStopMoveRight = v; }
+    void StopMove(bool v) { m_stopMove = v; }   
     bool IsStopMoveLeft() { return m_isStopMoveLeft; }
     bool IsStopMoveRight() { return m_isStopMoveRight; }
     void StopVeloY() { m_vVelocity.y = 0; }
@@ -47,4 +48,5 @@ public:
 private :
     bool m_isStopMoveLeft;
     bool m_isStopMoveRight;
+    bool m_stopMove;
 };
