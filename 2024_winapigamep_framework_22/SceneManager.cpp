@@ -8,6 +8,9 @@
 #include "Stage5.h"
 #include "Stage6.h"
 #include "Stage7.h"
+#include "Stage8.h"
+#include "Stage9.h"
+#include "Stage10.h"
 #include "GameScene.h"
 #include "MainScene.h"
 #include "DotweenManager.h"
@@ -27,6 +30,9 @@ void SceneManager::Init()
 	RegisterScene(L"Stage5",std::make_shared<Stage5>());
 	RegisterScene(L"Stage6",std::make_shared<Stage6>());
 	RegisterScene(L"Stage7",std::make_shared<Stage7>());
+	RegisterScene(L"Stage8",std::make_shared<Stage8>());
+	RegisterScene(L"Stage9",std::make_shared<Stage9>());
+	RegisterScene(L"Stage10",std::make_shared<Stage10>());
 	RegisterScene(L"GameScene",std::make_shared<GameScene>());
 	RegisterScene(L"MainScene",std::make_shared<MainScene>());
 
