@@ -3,7 +3,7 @@
 #include "Object.h"
 #include "Player.h"
 #include "InputManager.h"
-#include "SceneManager.h"
+#include "EventManager.h"
 #include "TimeManager.h"
 #include "Enemy.h"
 #include "Spine.h"
@@ -73,6 +73,6 @@ void Stage8::Init()
 void Stage8::Update()
 {
 	Scene::Update();
-	if (GET_KEYDOWN(KEY_TYPE::ENTER))
-		GET_SINGLE(SceneManager)->LoadNextScene();
+	if (GET_KEYDOWN(KEY_TYPE::ESC))
+		GET_SINGLE(EventManager)->LoadScene(L"MainScene");
 }
