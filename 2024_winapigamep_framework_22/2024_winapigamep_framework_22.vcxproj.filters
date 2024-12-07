@@ -175,6 +175,7 @@
     <ClInclude Include="Stage4.h" />
     <ClInclude Include="Stage5.h" />
     <ClInclude Include="Stage6.h" />
+    <ClInclude Include="Stage7.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2024_winapigamep_framework_22.rc">
@@ -298,6 +299,7 @@
     <ClCompile Include="Stage4.cpp" />
     <ClCompile Include="Stage5.cpp" />
     <ClCompile Include="Stage6.cpp" />
+    <ClCompile Include="Stage7.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

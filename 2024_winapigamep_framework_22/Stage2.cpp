@@ -24,15 +24,11 @@ void Stage2::Init()
 	pPlayer->SetName(L"Player");
 	AddObject(pPlayer, LAYER::PLAYER);
 
-	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::ENEMY);
-	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::BACKGROUND, LAYER::PLAYER);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::TRAP, LAYER::PLAYER);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::ENEMY, LAYER::PLAYER);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::DOOR, LAYER::PLAYER);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::SPINE, LAYER::PLAYER);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER_DIR_COL);
-	//GET_SINGLE(ResourceManager)->LoadSound(L"BGM", L"Sound\\Retro_bgm.wav", true);
-	//GET_SINGLE(ResourceManager)->Play(L"BGM");
 
 	Object* pBG = new Background;
 	pBG->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f });
@@ -41,21 +37,6 @@ void Stage2::Init()
 
 	GET_SINGLE(TimeManager)->GetDT();
 
-	/*vector<Vec2> spinePos;
-	spinePos.push_back({ 400.f, 600.f });
-	spinePos.push_back({ 500.f, 600.f });
-	spinePos.push_back({ 600.f, 600.f });
-	spinePos.push_back({ 700.f, 600.f });
-
-	vector<Object*> spines;
-	for (int i = 0; i < spinePos.size(); i++) {
-		spines.push_back(new Spine);
-		spines[i]->SetPos(spinePos[i]);
-		spines[i]->SetSize({Ratio,Ratio});
-
-
-		AddObject(spines[i], LAYER::PROJECTILE);
-	}*/
 
 	Wall* pGround = new Wall;
 	pGround->SetPos({ SCREEN_WIDTH / 2.f - 450.f, SCREEN_HEIGHT / 2.f + 340.f });

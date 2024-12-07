@@ -28,8 +28,6 @@ void Door::Render(HDC _hdc)
 {
 	Vec2 vPos = GetPos();
 	Vec2 vSize = GetSize();
-	//ELLIPSE_RENDER(_hdc, vPos.x, vPos.y
-	//	, vSize.x, vSize.y);
 	int width = m_pTex->GetWidth();
 	int height = m_pTex->GetHeight();
 	::TransparentBlt(_hdc
