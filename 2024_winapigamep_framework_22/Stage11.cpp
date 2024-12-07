@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "Stage7.h"
+#include "Stage11.h"
 #include "Object.h"
 #include "InputManager.h"
 #include "SceneManager.h"
@@ -9,7 +9,7 @@
 #include "ResourceManager.h"
 #include "StartBtn.h"
 
-void Stage7::Init()
+void Stage11::Init()
 {
 	Object* pObj = new MainBG(L"Ending", L"Texture\\Clear.bmp");
 	pObj->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f });
@@ -23,7 +23,7 @@ void Stage7::Init()
 	btnObj->SetName(L"Btn");
 	AddObject(btnObj, LAYER::UI);
 }
-void Stage7::Update()
+void Stage11::Update()
 {
 	Scene::Update();
 }
