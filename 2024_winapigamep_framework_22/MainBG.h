@@ -5,6 +5,7 @@ class MainBG : public Object
 {
 public:
 	MainBG();
+	MainBG(wstring name, wstring path);
 	~MainBG();
 public:
 	void Update() override;
