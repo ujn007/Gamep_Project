@@ -20,7 +20,7 @@
 void Stage1::Init()
 { 
 	Object* pPlayer = new Player;
-	pPlayer->SetPos({ 100.f, 0.f });
+	pPlayer->SetPos({ 100.f,620.f });
 	pPlayer->SetSize({ 30.f,30.f });
 	pPlayer->SetName(L"Player");	
 	AddObject(pPlayer, LAYER::PLAYER);
