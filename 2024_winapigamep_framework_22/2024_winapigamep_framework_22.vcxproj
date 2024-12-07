@@ -190,6 +190,7 @@
     <ClInclude Include="PlayerDirCollider.h" />
     <ClInclude Include="Quit.h" />
     <ClInclude Include="Stage10.h" />
+    <ClInclude Include="Stage11.h" />
     <ClInclude Include="Stage5.h" />
     <ClInclude Include="Spine.h" />
     <ClInclude Include="Resource.h" />
@@ -239,6 +240,7 @@
     <ClCompile Include="PlayerDirCollider.cpp" />
     <ClCompile Include="Quit.cpp" />
     <ClCompile Include="Stage10.cpp" />
+    <ClCompile Include="Stage11.cpp" />
     <ClCompile Include="Stage5.cpp" />
     <ClCompile Include="Spine.cpp" />
     <ClCompile Include="ResourceBase.cpp" />
