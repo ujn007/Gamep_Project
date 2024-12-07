@@ -27,20 +27,9 @@ void Wall::Render(HDC _hdc)
 {
 	Vec2 vPos = GetPos();
 	Vec2 vSize = GetSize();
-	//ELLIPSE_RENDER(_hdc, vPos.x, vPos.y
-	//	, vSize.x, vSize.y);
 	int width = m_pTex->GetWidth();
 	int height = m_pTex->GetHeight();
-	//cout << "Render : " << vPos.x - width * vSize.x * 6.7f << endl;
 
-	/*::BitBlt(_hdc
-		, (vPos.x - width * vSize.x)
-		, (vPos.y - height * vSize.y)
-		, vSize.x, vSize.y
-		, m_pTex->GetTexDC()
-		, 0, 0
-		, SRCCOPY
-	);*/
 	::StretchBlt(_hdc
 		, vPos.x - (vSize.x / 2.f)
 		, vPos.y - (vSize.y / 2.f)

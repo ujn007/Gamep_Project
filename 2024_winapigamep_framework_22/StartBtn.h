@@ -5,6 +5,7 @@ class StartBtn : public Object
 {
 public:
 	StartBtn();
+	StartBtn(wstring name, wstring path, wstring loadScene);
 	~StartBtn();
 public:
 	void Update() override;
@@ -13,4 +14,5 @@ public:
 
 private:
 	Texture* m_pTex;
+	wstring _loadScene;
 };

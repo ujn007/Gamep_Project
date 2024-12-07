@@ -25,14 +25,9 @@ void Stage1::Init()
 	pPlayer->SetName(L"Player");	
 	AddObject(pPlayer, LAYER::PLAYER);
 
-	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::PROJECTILE, LAYER::ENEMY);
-	//GET_SINGLE(CollisionManager)->CheckLayer(LAYER::BACKGROUND, LAYER::PLAYER);
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER_DIR_COL);	
-	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::GROUND, LAYER::PLAYER);	
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::DOOR, LAYER::PLAYER);	
 	GET_SINGLE(CollisionManager)->CheckLayer(LAYER::SPINE, LAYER::PLAYER);
-	//GET_SINGLE(ResourceManager)->LoadSound(L"BGM", L"Sound\\Retro_bgm.wav", true);
-	//GET_SINGLE(ResourceManager)->Play(L"BGM");
 
 	Object* pBG = new Background;
 	pBG->SetPos({ SCREEN_WIDTH  / 2.f, SCREEN_HEIGHT / 2.f });
@@ -41,21 +36,6 @@ void Stage1::Init()
 
 	GET_SINGLE(TimeManager)->GetDT();
 
-	/*vector<Vec2> spinePos;
-	spinePos.push_back({ 400.f, 600.f });
-	spinePos.push_back({ 500.f, 600.f });
-	spinePos.push_back({ 600.f, 600.f });
-	spinePos.push_back({ 700.f, 600.f });
-
-	vector<Object*> spines;
-	for (int i = 0; i < spinePos.size(); i++) {
-		spines.push_back(new Spine);
-		spines[i]->SetPos(spinePos[i]);
-		spines[i]->SetSize({Ratio,Ratio});
-
-
-		AddObject(spines[i], LAYER::PROJECTILE);
-	}*/
 
 	Wall* pGround = new Wall;
 	pGround->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f + 320.f });
@@ -63,26 +43,6 @@ void Stage1::Init()
 	pGround->GetComponent<Collider>()->SetSize(pGround->GetSize());
 	pGround->SetName(L"Ground");
 	AddObject(pGround, LAYER::GROUND);
-
-	//Object* pGround1 = new Wall;
-	//pGround1->SetPos({500.f, SCREEN_HEIGHT / 2.f + 300.f });
-	//pGround1->SetSize({ 500.f , 100.f });
-	//pGround1->GetComponent<Collider>()->SetSize(pGround1->GetSize());
-	//pGround1->SetName(L"Ground");
-	//AddObject(pGround1, LAYER::GROUND);
-
-	/*Object* pGround1 = new Wall;
-	pGround1->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f + 400.f });
-	pGround1->SetSize({ 50.f ,5.f });
-	pGround1->GetComponent<Collider>()->SetSize(pGround->GetSize());
-	pGround1->SetName(L"Ground");
-	AddObject(pGround1, LAYER::GROUND);*/
-
-	//Object* test = new Test;
-	//test->SetPos({0.f, 633.703f });
-	//test->SetSize({1.f ,1.f });		
-	//test->SetName(L"Test");	
-	//AddObject(test, LAYER::ENEMY);	
 
 	Object* pDoor = new Door;
 	pDoor->SetPos({ 1100.f, 600.f });

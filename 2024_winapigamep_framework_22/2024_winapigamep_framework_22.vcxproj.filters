@@ -44,9 +44,6 @@
     <Filter Include="Engine\06. Component\RigidBody">
       <UniqueIdentifier>{a8b2d107-8397-47cc-9cf4-9abdaeff79bb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\04. Scene\Stage">
-      <UniqueIdentifier>{9a07654a-3305-4b9f-9db5-ccd85ebe4f8a}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="2024_winapigamep_framework_22.h">
@@ -89,6 +86,9 @@
       <Filter>Engine\99. Header</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
+      <Filter>Engine\04. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1.h">
       <Filter>Engine\04. Scene</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h">
@@ -166,31 +166,16 @@
     <ClInclude Include="Door.h">
       <Filter>Engine\03. Object</Filter>
     </ClInclude>
+    <ClInclude Include="Stage2.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="PlayerDirCollider.h">
       <Filter>Engine\03. Object</Filter>
     </ClInclude>
-    <ClInclude Include="Stage1.h">
-      <Filter>Engine\04. Scene\Stage</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage2.h">
-      <Filter>Engine\04. Scene\Stage</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage3.h">
-      <Filter>Engine\04. Scene\Stage</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage4.h">
-      <Filter>Engine\04. Scene\Stage</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage5.h">
-      <Filter>Engine\04. Scene\Stage</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage6.h">
-      <Filter>Engine\04. Scene\Stage</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage7.h">
-      <Filter>Engine\04. Scene\Stage</Filter>
-    </ClInclude>
+    <ClInclude Include="Stage3.h" />
+    <ClInclude Include="Stage4.h" />
+    <ClInclude Include="Stage5.h" />
+    <ClInclude Include="Stage6.h" />
+    <ClInclude Include="Stage7.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2024_winapigamep_framework_22.rc">
@@ -225,6 +210,9 @@
       <Filter>Engine\03. Object</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
+      <Filter>Engine\04. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage1.cpp">
       <Filter>Engine\04. Scene</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
@@ -302,31 +290,16 @@
     <ClCompile Include="Wall.cpp">
       <Filter>Engine\03. Object</Filter>
     </ClCompile>
+    <ClCompile Include="Stage2.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="PlayerDirCollider.cpp">
       <Filter>Engine\03. Object</Filter>
     </ClCompile>
-    <ClCompile Include="Stage1.cpp">
-      <Filter>Engine\04. Scene\Stage</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage2.cpp">
-      <Filter>Engine\04. Scene\Stage</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage3.cpp">
-      <Filter>Engine\04. Scene\Stage</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage4.cpp">
-      <Filter>Engine\04. Scene\Stage</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage5.cpp">
-      <Filter>Engine\04. Scene\Stage</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage6.cpp">
-      <Filter>Engine\04. Scene\Stage</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage7.cpp">
-      <Filter>Engine\04. Scene\Stage</Filter>
-    </ClCompile>
+    <ClCompile Include="Stage3.cpp" />
+    <ClCompile Include="Stage4.cpp" />
+    <ClCompile Include="Stage5.cpp" />
+    <ClCompile Include="Stage6.cpp" />
+    <ClCompile Include="Stage7.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
