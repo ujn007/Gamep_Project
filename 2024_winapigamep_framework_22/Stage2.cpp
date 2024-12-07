@@ -56,8 +56,8 @@ void Stage2::Init()
 	pGround->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f + 540.f });
 	pGround->SetSize({ 100.f * Ratio ,5.f * Ratio });
 	pGround->GetComponent<Collider>()->SetSize(pGround->GetSize());
-	pGround->SetName(L"FALL");
-	AddObject(pGround, LAYER::ENEMY);	
+	pGround->SetName(L"Die");
+	AddObject(pGround, LAYER::SPINE);	
 
 	pGround = new Wall;
 	pGround->SetPos({ SCREEN_WIDTH / 2.f + 300.f, SCREEN_HEIGHT / 2.f + 340.f });

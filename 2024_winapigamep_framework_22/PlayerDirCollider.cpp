@@ -39,11 +39,6 @@ void PlayerDirCollider::EnterCollision(Collider* _pOther)
 	// Block
 	if (objName == L"Ground")
 		BlockCheck(pOtherObj);
-
-	if (m_eState == DIR::BOTTOM && objName == L"DamageObject")
-	{
-		//m_pOwner->Die();
-	}
 }
 
 void PlayerDirCollider::ExitCollision(Collider* _pOther)

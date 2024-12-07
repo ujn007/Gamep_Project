@@ -11,6 +11,7 @@ Spine::Spine()
 //	: m_dir(-1.f)
 	: m_angle(0.f)
 	, m_vDir(1.f, 1.f)
+	, m_duration(0.3f)
 {
 	m_pTex = GET_SINGLE(ResourceManager)->TextureLoad(L"Spine", L"Texture\\Spine.bmp");
 	this->AddComponent<Collider>();
@@ -51,14 +52,14 @@ void Spine::EnterCollision(Collider* _other)
 	case TweenMode::NONE:
 		break;
 	case TweenMode::ONCE:
-		GET_SINGLE(DotweenManager)->DoMove(this, GetPos(), enterPos, 0.3f);
+		GET_SINGLE(DotweenManager)->DoMove(this, GetPos(), enterPos, m_duration);
 		enterMove = TweenMode::NONE;
 		GetComponent<Collider>()->SetSize(changeColliderSize);
 		SetName(L"Die" + std::to_wstring(hash));
 		hash++;
 		break;
 	case TweenMode::EVERYTIME:
-		GET_SINGLE(DotweenManager)->DoMove(this, GetPos(), enterPos, 0.3f);
+		GET_SINGLE(DotweenManager)->DoMove(this, GetPos(), enterPos, m_duration);
 		SetName(L"Die" + std::to_wstring(hash));
 		hash++;
 		break;

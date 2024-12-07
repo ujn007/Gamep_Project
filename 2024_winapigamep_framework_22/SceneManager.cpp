@@ -24,29 +24,29 @@ void SceneManager::Init()
 	m_pCurrentScene = nullptr;
 
 	// ¾À µî·Ï
-	RegisterScene(L"Stage1",std::make_shared<Stage1>());
-	RegisterScene(L"Stage2",std::make_shared<Stage2>());
-	RegisterScene(L"Stage3",std::make_shared<Stage3>());
-	RegisterScene(L"Stage4",std::make_shared<Stage4>());
-	RegisterScene(L"Stage5",std::make_shared<Stage5>());
-	RegisterScene(L"Stage6",std::make_shared<Stage6>());
-	RegisterScene(L"Stage7",std::make_shared<Stage7>());
-	RegisterScene(L"Stage8",std::make_shared<Stage8>());
-	RegisterScene(L"Stage9",std::make_shared<Stage9>());
-	RegisterScene(L"Stage10",std::make_shared<Stage10>());
-	RegisterScene(L"Stage11",std::make_shared<Stage11>());
-	RegisterScene(L"GameScene",std::make_shared<GameScene>());
-	RegisterScene(L"MainScene",std::make_shared<MainScene>());
+	RegisterScene(L"Stage1", std::make_shared<Stage1>());
+	RegisterScene(L"Stage2", std::make_shared<Stage2>());
+	RegisterScene(L"Stage3", std::make_shared<Stage3>());
+	RegisterScene(L"Stage4", std::make_shared<Stage4>());
+	RegisterScene(L"Stage5", std::make_shared<Stage5>());
+	RegisterScene(L"Stage6", std::make_shared<Stage6>());
+	RegisterScene(L"Stage7", std::make_shared<Stage7>());
+	RegisterScene(L"Stage8", std::make_shared<Stage8>());
+	RegisterScene(L"Stage9", std::make_shared<Stage9>());
+	RegisterScene(L"Stage10", std::make_shared<Stage10>());
+	RegisterScene(L"Stage11", std::make_shared<Stage11>());
+	RegisterScene(L"GameScene", std::make_shared<GameScene>());
+	RegisterScene(L"MainScene", std::make_shared<MainScene>());
 
 	// ¾À ·Îµå
-	LoadScene(L"MainScene");
+	LoadScene(L"Stage8");
 }
 
 void SceneManager::Update()
 {
-	if (m_pCurrentScene == nullptr)
-		return;
+	if (m_pCurrentScene == nullptr) return;
 	m_pCurrentScene->Update();
+	if (m_pCurrentScene == nullptr) return;
 	m_pCurrentScene->LateUpdate();
 }
 
@@ -61,7 +61,7 @@ void SceneManager::RegisterScene(const wstring& _sceneName, std::shared_ptr<Scen
 {
 	if (_sceneName.empty() || _scene == nullptr)
 		return;
-	m_mapScenes.insert(m_mapScenes.end(), {_sceneName, _scene});
+	m_mapScenes.insert(m_mapScenes.end(), { _sceneName, _scene });
 }
 
 void SceneManager::LoadScene(const wstring& _sceneName)

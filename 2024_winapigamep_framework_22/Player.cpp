@@ -59,7 +59,7 @@ Player::Player()
 
 	PlayerDirCollider* m_pDirBottomCol = new PlayerDirCollider;
 	m_pDirBottomCol->SetOwner(this);
-	m_pDirBottomCol->SetCollider(DIR::BOTTOM, { 20.f, 1.f }, { 0.f, 18.f });
+	m_pDirBottomCol->SetCollider(DIR::BOTTOM, { 20.f, 1.f }, { 0.f, 16.f });
 
 	GET_SINGLE(SceneManager)->GetCurrentScene()->AddObject(m_pDirLeftCol, LAYER::PLAYER_DIR_COL);
 	GET_SINGLE(SceneManager)->GetCurrentScene()->AddObject(m_pDirRightCol, LAYER::PLAYER_DIR_COL);
@@ -128,11 +128,11 @@ void Player::HandleMovement()
 	
 	Vec2 velocity = rigid->GetVelocity();	
 
-	if (GET_KEY(KEY_TYPE::A) && 0 + 10 < GetPos().x && !isLeftCollision) {
+	if (GET_KEY(KEY_TYPE::A) && 0 + 35 < GetPos().x && !isLeftCollision) {
 		velocity.x = -250.f;
 		isFacingRight = false;
 	}
-	else if (GET_KEY(KEY_TYPE::D) && SCREEN_WIDTH - 10 > GetPos().x && !isRightCollision) {
+	else if (GET_KEY(KEY_TYPE::D) && SCREEN_WIDTH - 35 > GetPos().x && !isRightCollision) {
 		velocity.x = 250.f;
 		isFacingRight = true;
 	}
@@ -225,7 +225,8 @@ void Player::EnterCollision(Collider* _other)
 {
 	Object* obj = _other->GetOwner();
 	Object* player = rigid->GetOwner();
-	if (obj->GetName().find(L"Die") != wstring::npos || obj->GetName() == L"FALL") {
+	if (obj->GetName().find(L"Die") != wstring::npos ) {
+		std::wcout << obj->GetName() << endl;	
 		isDie = true;
 		rigid->UseGravity(false);
 		rigid->StopMove(true);

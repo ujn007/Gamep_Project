@@ -9,6 +9,7 @@ enum class LAYER
 	DOOR,
 	Wall,
 	ENEMY,
+	TELEPORT,
 	PLAYER_DIR_COL,
 	PLAYER,
 	UI,

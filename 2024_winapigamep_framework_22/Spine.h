@@ -25,7 +25,9 @@ public:
 	void SetEnterPos(Vec2 pos) { enterPos = pos; }
 	void SetMode(TweenMode value) { enterMove = value; }
 	void SetchangeColliderSize(Vec2 value) { changeColliderSize = value; }
+	void SetDuation(float v) { m_duration = v; }	
 private:
+	float m_duration;
 	//float m_dir;
 	float m_angle;
 	Vec2 m_vDir;
