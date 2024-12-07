@@ -19,7 +19,7 @@
 void Stage4::Init()
 {
 	Object* pPlayer = new Player;
-	pPlayer->SetPos({ 100.f,620.f });
+	pPlayer->SetPos({ 100.f,500.f });
 	pPlayer->SetSize({ 30.f,30.f });
 	pPlayer->SetName(L"Player");
 	pPlayer->GetComponent<Collider>()->SetOwner(pPlayer);
