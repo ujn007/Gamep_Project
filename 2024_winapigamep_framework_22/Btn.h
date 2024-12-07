@@ -1,12 +1,12 @@
 #pragma once
 #include "Object.h"
 class Texture;
-class StartBtn : public Object
+class Btn : public Object
 {
 public:
-	StartBtn();
-	StartBtn(wstring name, wstring path, wstring loadScene);
-	~StartBtn();
+	Btn();
+	Btn(wstring name, wstring path, wstring loadScene);
+	~Btn();
 public:
 	void Update() override;
 	void Render(HDC _hdc) override;

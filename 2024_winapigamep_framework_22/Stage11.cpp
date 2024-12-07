@@ -7,7 +7,7 @@
 #include "Quit.h"
 #include "Background.h"
 #include "ResourceManager.h"
-#include "StartBtn.h"
+#include "Btn.h"
 
 void Stage11::Init()
 {
@@ -17,7 +17,7 @@ void Stage11::Init()
 	pObj->SetName(L"BG");
 	AddObject(pObj, LAYER::BACKGROUND);
 
-	Object* btnObj = new StartBtn(L"Main", L"Texture\\Menu.bmp", L"MainScene");
+	Object* btnObj = new Btn(L"Main", L"Texture\\Menu.bmp", L"MainScene");
 	btnObj->SetPos({ SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f + 250 });
 	btnObj->SetSize({ 2.f, 2.f });
 	btnObj->SetName(L"Btn");

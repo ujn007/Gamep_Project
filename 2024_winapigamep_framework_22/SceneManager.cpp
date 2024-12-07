@@ -91,20 +91,15 @@ void SceneManager::LoadNextScene()
 wstring SceneManager::GetNextSceneName(const wstring& _sceneName)
 {
 	if (!_sceneName.empty()) {
-		// wstring -> string 변환
 		std::string str(_sceneName.begin(), _sceneName.end());
 
-		// 마지막 글자가 숫자인지 확인
 		if (isdigit(str.back())) {
-			// 숫자로 변환 후 1 더하기
 			int number = str.back() - '0' + 1;
 
-			// 마지막 글자 제거 후 새 숫자 추가
 			str.pop_back();
 			str += std::to_string(number);
 		}
 
-		// 결과 출력
 		return std::wstring(str.begin(), str.end());
 	}
 	return L"";

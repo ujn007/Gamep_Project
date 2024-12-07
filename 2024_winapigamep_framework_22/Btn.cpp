@@ -1,30 +1,30 @@
 #include "pch.h"
-#include "StartBtn.h"
+#include "Btn.h"
 #include "Texture.h"
 #include "ResourceManager.h"
 #include "InputManager.h"
 #include "SceneManager.h"
 #include "EventManager.h"
 
-StartBtn::StartBtn()
+Btn::Btn()
 	: m_pTex(nullptr)
 	, _loadScene(L"Stage1")
 {
 	m_pTex = GET_SINGLE(ResourceManager)->TextureLoad(L"Start", L"Texture\\Start.bmp");
 }
-StartBtn::StartBtn(wstring name, wstring path, wstring loadScene)
+Btn::Btn(wstring name, wstring path, wstring loadScene)
 {
 	m_pTex = GET_SINGLE(ResourceManager)->TextureLoad(name, path);
 	this->_loadScene = loadScene;
 	
 }
-StartBtn::~StartBtn()
+Btn::~Btn()
 {
 	//if (nullptr != m_pTex)
 	//	delete m_pTex;
 }
 
-void StartBtn::Update()
+void Btn::Update()
 {
 	Vec2 pos = GetPos();
 	Vec2 size = GetRect() * 0.5f;
@@ -35,7 +35,7 @@ void StartBtn::Update()
 			GET_SINGLE(EventManager)->LoadScene(_loadScene);
 	}
 }
-void StartBtn::Render(HDC _hdc)
+void Btn::Render(HDC _hdc)
 {
 	Vec2 vPos = GetPos();
 	Vec2 vSize = GetSize();
@@ -54,7 +54,7 @@ void StartBtn::Render(HDC _hdc)
 	ComponentRender(_hdc);
 }
 
-Vec2 StartBtn::GetRect()
+Vec2 Btn::GetRect()
 {
 	Vec2 vPos = GetPos();
 	Vec2 vSize = GetSize();

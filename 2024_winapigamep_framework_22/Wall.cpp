@@ -52,11 +52,12 @@ void Wall::EnterCollision(Collider* _other)
 	case TweenMode::NONE:
 		break;
 	case TweenMode::ONCE:
-		GET_SINGLE(DotweenManager)->DoMove(this, GetPos(), enterPos, 1.f);
+		GET_SINGLE(DotweenManager)->DoMove(this, GetPos(), enterPos, 0.3f);
 		enterMove = TweenMode::NONE;
+		GetComponent<Collider>()->SetSize(changeColliderSize);
 		break;
 	case TweenMode::EVERYTIME:
-		GET_SINGLE(DotweenManager)->DoMove(this, GetPos(), enterPos, 1.f);
+		GET_SINGLE(DotweenManager)->DoMove(this, GetPos(), enterPos, 0.3f);
 		break;
 	default:
 		break;
